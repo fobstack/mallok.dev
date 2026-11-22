@@ -63,6 +63,51 @@ def logo_assets():
 <div class="asset-group"><h3>{T("Wordmark", "独立字标")}</h3><div class="assets">{c}</div></div>'''
 
 
+# The kit's GIFs have solid backgrounds; each panel uses the GIF's own colour.
+GIF_LIGHT_BG = '#F9F8FB'
+
+
+def motion(src, static, bg, label, alt, cls='', note=''):
+    """A looping GIF; reduced-motion visitors get a static file instead."""
+    return (
+        f'<figure class="asset"><div class="logo-panel is-motion {cls}" style="background:{bg}">'
+        f'<picture><source media="(prefers-reduced-motion: reduce)" srcset="{BRAND}/{static}">'
+        f'<img src="{BRAND}/{src}" alt="{alt}" loading="lazy"></picture></div>'
+        f'<figcaption><strong>{label}</strong><span>{note}'
+        f'<a href="{BRAND}/{src}" download>GIF ↓</a></span></figcaption></figure>'
+    )
+
+
+def motion_assets():
+    loader = f'{BRAND}/gif/mallok-loader.gif'
+    still = f'{BRAND}/png/mark/mallok-mark-color-512.png'
+    loaders = ''.join(
+        '<picture><source media="(prefers-reduced-motion: reduce)" '
+        f'srcset="{still}"><img src="{loader}" width="128" height="128" '
+        f'alt="{alt}" loading="lazy"></picture>'
+        for alt in (T('Loader on light', '浅色底上的加载动效'),
+                    T('Loader on dark', '深色底上的加载动效')))
+    items = ''.join((
+        motion('gif/mallok-logo-dark.gif', 'png/logo/mallok-logo-color-dark.png', DARK_BG,
+               T('Logo · on dark', '标志 · 深色底'), T('Animated Mallok logo on dark', '深色底 Mallok 标志动效'),
+               note='800×240 · '),
+        motion('gif/mallok-logo-light.gif', 'png/logo/mallok-logo-color-light.png', GIF_LIGHT_BG,
+               T('Logo · on light', '标志 · 浅色底'), T('Animated Mallok logo on light', '浅色底 Mallok 标志动效'),
+               note='800×240 · '),
+        motion('gif/mallok-mark-dark.gif', 'png/mark/mallok-mark-color-512.png', DARK_BG,
+               T('Mark · badge', '图形 · 徽章'), T('Animated Mallok mark badge', 'Mallok 图形徽章动效'),
+               cls='is-badge', note='256×256 · '),
+        f'<figure class="asset"><div class="logo-panel is-motion is-split">{loaders}</div>'
+        f'<figcaption><strong>{T("Loader · transparent", "加载动效 · 透明底")}</strong>'
+        f'<span>128×128 · <a href="{loader}" download>GIF ↓</a></span></figcaption></figure>',
+    ))
+    return f'''<div class="asset-group"><h3>{T("Motion — looping GIFs", "动效 —— 无缝循环 GIF")}</h3>
+<p class="fine" style="margin:-.5rem 0 1rem">{T(
+  "24 fps, seamless loops. The logos suit README headers, social posts and this site's hero; the badge suits avatars; the loader is for publishing states. With reduced motion turned on, this page shows still images instead.",
+  "24 fps，无缝循环。标志动效适合 README 横幅、社交发布和本站首屏；徽章适合头像；加载动效用于发布中的状态。系统开启“减少动态效果”时，本页改为显示静态图。")}</p>
+<div class="assets is-motion">{items}</div></div>'''
+
+
 def favicon_assets():
     f = BRAND + '/favicon'
     sizes = ''.join(
@@ -221,8 +266,9 @@ def build():
     </div>
     {favicon_assets()}
     <p class="fine" style="margin-top:1rem">{T(
-      'Also in the kit: a 512 px avatar (<a href="' + BRAND + '/social/github-avatar-512.png">PNG</a>), README headers for light and dark (<a href="' + BRAND + '/social/readme-header-light.svg">light</a>, <a href="' + BRAND + '/social/readme-header-dark.svg">dark</a>) and four looping GIFs (<a href="' + BRAND + '/gif/mallok-logo-light.gif">logo light</a>, <a href="' + BRAND + '/gif/mallok-logo-dark.gif">logo dark</a>, <a href="' + BRAND + '/gif/mallok-mark-dark.gif">mark</a>, <a href="' + BRAND + '/gif/mallok-loader.gif">loader</a>). The GIFs are linked rather than shown, so nothing on this page moves on its own.',
-      '资料包里还有：512 px 头像（<a href="' + BRAND + '/social/github-avatar-512.png">PNG</a>）、明暗两版 README 横幅（<a href="' + BRAND + '/social/readme-header-light.svg">浅色</a>、<a href="' + BRAND + '/social/readme-header-dark.svg">深色</a>）和四个循环 GIF（<a href="' + BRAND + '/gif/mallok-logo-light.gif">浅色标志</a>、<a href="' + BRAND + '/gif/mallok-logo-dark.gif">深色标志</a>、<a href="' + BRAND + '/gif/mallok-mark-dark.gif">图形</a>、<a href="' + BRAND + '/gif/mallok-loader.gif">加载动效</a>）。GIF 只提供链接而不直接展示，所以本页不会有任何自动播放的动画。')}</p>
+      'Also in the kit: a 512 px avatar (<a href="' + BRAND + '/social/github-avatar-512.png">PNG</a>) and README headers for light and dark (<a href="' + BRAND + '/social/readme-header-light.svg">light</a> and <a href="' + BRAND + '/social/readme-header-dark.svg">dark</a>).',
+      '资料包里还有：512 px 头像（<a href="' + BRAND + '/social/github-avatar-512.png">PNG</a>）和明暗两版 README 横幅（<a href="' + BRAND + '/social/readme-header-light.svg">浅色</a>、<a href="' + BRAND + '/social/readme-header-dark.svg">深色</a>）。')}</p>
+    {motion_assets()}
   </div>
 </section>
 

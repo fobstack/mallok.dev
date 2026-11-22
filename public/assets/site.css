@@ -4184,3 +4184,33 @@ html:lang(zh-CN) .m-page-t,
     background-image: url("/assets/brand/svg/logo/mallok-logo-color-light.svg");
   }
 }
+
+/* ---------- Brand page: looping GIFs ---------- */
+.assets.is-motion {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+}
+
+.logo-panel.is-motion {
+  min-height: 10rem;
+  padding: 0.5rem;
+}
+
+.logo-panel.is-motion img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo-panel.is-badge img {
+  width: 9rem;
+}
+
+.logo-panel.is-split {
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(90deg, #FBFAFC 50%, #0D0B14 50%);
+}
+
+.logo-panel.is-split img {
+  width: 6rem;
+}
