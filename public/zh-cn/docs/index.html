@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文档 —— Mallok</title>
+<meta name="description" content="Mallok 快速上手，以及 GitHub 文档导览：入门指南、架构、主题格式、插件 API 和 CLI。">
+<link rel="canonical" href="https://mallok.dev/zh-cn/docs/">
+<link rel="alternate" hreflang="en" href="https://mallok.dev/docs/">
+<link rel="alternate" hreflang="zh-CN" href="https://mallok.dev/zh-cn/docs/">
+<link rel="alternate" hreflang="x-default" href="https://mallok.dev/docs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mallok">
+<meta property="og:title" content="文档 —— Mallok">
+<meta property="og:description" content="Mallok 快速上手，以及 GitHub 文档导览：入门指南、架构、主题格式、插件 API 和 CLI。">
+<meta property="og:url" content="https://mallok.dev/zh-cn/docs/">
+<meta property="og:image" content="https://mallok.dev/assets/brand/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0B14">
+<script>try{var t=localStorage.getItem('mallok-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='light'?'#FBFAFC':'#0D0B14'}}catch(e){}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/brand/favicon/safari-pinned-tab.svg" color="#7E22CE">
+<link rel="manifest" href="/assets/brand/favicon/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/zh-cn/" aria-label="Mallok 首页"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+    <nav class="nav-desktop" aria-label="主导航">
+      <ul><li><a href="/zh-cn/features/">功能</a></li><li><a href="/zh-cn/themes/">主题</a></li><li><a href="/zh-cn/cost/">成本</a></li><li><a href="/zh-cn/docs/" aria-current="page">文档</a></li><li><a href="https://demo.mallok.dev/">演示</a></li></ul>
+    </nav>
+    <div class="head-tools">
+      <details class="lang-menu">
+        <summary aria-label="语言：简体中文"><svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.2" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.8c1.7 1.8 2.5 3.9 2.5 6.2S9.7 12.4 8 14.2M8 1.8C6.3 3.6 5.5 5.7 5.5 8s.8 4.4 2.5 6.2" stroke-width="1.4"/></svg><span>中文</span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <ul class="lang-list"><li><a href="/docs/" lang="en" hreflang="en"><span>English</span></a></li><li><a href="/zh-cn/docs/" lang="zh-CN" hreflang="zh-CN" aria-current="true"><span>简体中文</span><svg class="check" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul>
+      </details>
+      <button class="theme-toggle" type="button" data-label-light="切换到浅色模式" data-label-dark="切换到深色模式" aria-label="切换到浅色模式"><svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <a class="icon-link" href="https://github.com/fobstack/mallok" aria-label="Mallok 的 GitHub 仓库"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="ico-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke-width="1.6" stroke-linecap="round"/></svg>
+          菜单
+        </summary>
+        <nav aria-label="菜单">
+          <ul><li><a href="/zh-cn/features/">功能</a></li><li><a href="/zh-cn/themes/">主题</a></li><li><a href="/zh-cn/cost/">成本</a></li><li><a href="/zh-cn/docs/" aria-current="page">文档</a></li><li><a href="https://demo.mallok.dev/">在线演示<span>demo.mallok.dev</span></a></li><li><a href="https://github.com/fobstack/mallok">GitHub<span>fobstack/mallok</span></a></li><li><a href="https://www.npmjs.com/package/mallok">npm<span>mallok</span></a></li></ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow"><b>Docs</b>从这里开始</p>
+    <h1 id="page-title">从空目录到上线的网站。</h1>
+    <p class="lede">下面的快速上手是精简版。完整文档放在 GitHub 仓库里，和它描述的代码在一起；这一页是导览。</p>
+    <div class="actions" style="margin-top:1.5rem">
+      <a class="btn btn-primary" href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/GETTING_STARTED.md">完整入门指南<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-ghost" href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/README.md">文档导航<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quick-start" aria-labelledby="qs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>01</b>快速上手</p>
+      <h2 id="qs-title">五步，其中一步只是一条命令。</h2>
+      <p>需要 Node.js 22 或更新版本（含 npm），以及一个能使用 Workers、D1 和 R2 的 Cloudflare 账号。以下步骤针对已发布的 0.1.0-rc.10 候选版。</p>
+    </div>
+    <ol class="steps-list">
+      <li>
+        <h3>在本地生成并检查项目</h3>
+        <p>这一步安装依赖、构建项目并检查部署配置，不会创建任何云资源。</p>
+        <figure class="code" style="margin:0"><pre tabindex="0"><code>npx mallok create my-site --no-deploy
+cd my-site</code></pre></figure>
+      </li>
+      <li>
+        <h3>登录 Cloudflare 并部署</h3>
+        <p>先确认 <code>whoami</code> 显示的是你要用的账号。创建过程会在该账号里开通一个 Worker、一个 D1 数据库和一个 R2 存储桶。想在首次部署时就绑定自己的域名，加上 <code>--domain site.example.com</code>。</p>
+        <figure class="code" style="margin:0"><pre tabindex="0"><code>npx wrangler login
+npx wrangler whoami
+npx mallok create . --slug my-site</code></pre></figure>
+        <p class="fine">已经登录，想一步到位？<code>npx mallok create my-site</code> 会一次完成生成、校验和部署。</p>
+      </li>
+      <li>
+        <h3>在浏览器里完成初始化</h3>
+        <p>打开 CLI 输出的初始化地址，填入一次性的 setup key。向导会创建管理员、设置站点名称和语言，并可导入示例内容——示例只是占位，正式对外之前请替换成你自己的内容。</p>
+      </li>
+      <li>
+        <h3>绑定自定义域名</h3>
+        <p>边缘缓存需要自定义域名；<code>workers.dev</code> 地址只用于预览。想让修改及时生效，还要把清缓存令牌（<strong>Zone → Cache Purge → Purge</strong>）和 zone id 配成 Worker secrets。没有它们，访客要等缓存过期才能看到新内容。</p>
+      </li>
+      <li>
+        <h3>发布内容</h3>
+        <p>在 <code>/_mallok/app</code> 后台修改示例产品或新建内容，然后发布，不需要重新构建。也可以在终端或 CI 里，用分权限的 API 令牌直接发布整个内容包目录：</p>
+        <figure class="code" style="margin:0"><pre tabindex="0"><code>npx mallok publish ./content</code></pre></figure>
+      </li>
+    </ol>
+    <div class="callout" style="margin-top:1.25rem">
+      <p><strong>正式依赖之前：</strong> 目前是候选版。还没有“Deploy to Cloudflare”按钮，真实询盘邮件送达也尚未完成端到端验收。
+        <a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/RELEASE_STATUS.md">查看发布状态</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" aria-labelledby="map-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>02</b>文档导览</p>
+      <h2 id="map-title">接下来读什么。</h2>
+      <p>下面的链接都会打开 GitHub 上的文档。英文是主要文档语言；入门指南和发布状态有中文翻译，其余技术参考暂为英文。</p>
+    </div>
+    <div class="grid" style="gap:2.5rem">
+      <div class="doc-group"><h3>从这里开始</h3><ul class="doc-list cols"><li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/GETTING_STARTED.md"><strong>创建第一个网站</strong><span class="where">docs/zh-CN/GETTING_STARTED.md</span><span class="what">安装、部署、完成初始化、发布产品、配置询盘、保留一份导出。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/RELEASE_STATUS.md"><strong>发布状态与已知限制</strong><span class="where">docs/zh-CN/RELEASE_STATUS.md</span><span class="what">哪些内容实测过、在哪个候选版上测的、还有什么没完成。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/README.md"><strong>中文文档导航</strong><span class="where">docs/zh-CN/README.md</span><span class="what">中文已翻译的内容，以及英文技术参考的入口。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/README.zh-CN.md"><strong>项目介绍</strong><span class="where">README.zh-CN.md</span><span class="what">项目概览，以及如何在本地试用框架源码。</span></a></li></ul></div>
+      <div class="doc-group"><h3>理解设计</h3><ul class="doc-list cols"><li><a href="https://github.com/fobstack/mallok/blob/main/docs/PRODUCT_VISION.md"><strong>产品愿景（英文）</strong><span class="where">docs/PRODUCT_VISION.md</span><span class="what">Mallok 是什么、给谁用、有哪些承诺、成本阶梯、路线图和不做的事。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md"><strong>架构（英文）</strong><span class="where">docs/ARCHITECTURE.md</span><span class="what">请求路径、两阶段渲染、三层缓存、内容模型、安全边界。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/CONTENT_FORMAT.md"><strong>内容格式（英文）</strong><span class="where">docs/CONTENT_FORMAT.md</span><span class="what">内容包、front matter 字段，以及导入导出的约定。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/DATA_MODEL.md"><strong>数据模型（英文）</strong><span class="where">docs/DATA_MODEL.md</span><span class="what">D1 表结构、索引、约束和迁移规则。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLOUDFLARE_RESOURCES.md"><strong>Cloudflare 资源（英文）</strong><span class="where">docs/CLOUDFLARE_RESOURCES.md</span><span class="what">账号里会创建哪些资源，配额、命名、备份与删除。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/TECH_STACK.md"><strong>技术栈（英文）</strong><span class="where">docs/TECH_STACK.md</span><span class="what">运行时、依赖分层，以及明确禁止使用的东西。</span></a></li></ul></div>
+      <div class="doc-group"><h3>基于 Mallok 开发</h3><ul class="doc-list cols"><li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md"><strong>主题格式（英文）</strong><span class="where">docs/THEME_FORMAT.md</span><span class="what">theme.json、内容类型与字段、视图约定、受限的 Liquid 子集、语言包。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md"><strong>插件 API（英文）</strong><span class="where">docs/PLUGIN_API.md</span><span class="what">plugin.json、钩子、能力、生命周期，以及官方询盘插件。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md"><strong>CLI 参考（英文）</strong><span class="where">docs/CLI.md</span><span class="what">命令、参数、认证、幂等规则、退出码。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/ADMIN.md"><strong>后台（英文）</strong><span class="where">docs/ADMIN.md</span><span class="what">信息架构、安装向导、编辑器和媒体库。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/SEO_PERFORMANCE.md"><strong>SEO 与性能（英文）</strong><span class="where">docs/SEO_PERFORMANCE.md</span><span class="what">内置的 SEO 输出、hreflang、结构化数据、性能预算。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/SECURITY.md"><strong>安全（英文）</strong><span class="where">docs/SECURITY.md</span><span class="what">信任级别、凭据处理、内容净化——以及有意不防御的情形。</span></a></li></ul></div>
+      <div class="doc-group"><h3>参与项目</h3><ul class="doc-list cols"><li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.zh-CN.md"><strong>贡献指南</strong><span class="where">CONTRIBUTING.zh-CN.md</span><span class="what">如何搭建开发环境，以及一次改动要满足的要求。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/TESTING.md"><strong>测试（英文）</strong><span class="where">docs/TESTING.md</span><span class="what">测试分层、硬性约定清单和覆盖率门槛。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_GATE.md"><strong>发布手册（英文）</strong><span class="where">docs/RELEASE_GATE.md</span><span class="what">发行包在发布前如何验证。</span></a></li><li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md"><strong>安全报告（英文）</strong><span class="where">SECURITY.md</span><span class="what">如何私下报告安全漏洞。</span></a></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="else-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>03</b>其他入口</p>
+      <h2 id="else-title">看效果，读源码，装起来。</h2>
+    </div>
+    <div class="grid cols-3">
+      <article class="card"><h3>在线演示</h3><p>只读的 Atelier 站点。示例企业与内容均为虚构；演示站不开放后台，也不收集询盘。</p><p><a class="link-arrow" href="https://demo.mallok.dev/">demo.mallok.dev</a></p></article>
+      <article class="card"><h3>GitHub</h3><p>源码、issue、更新日志和文档本身，采用 Apache-2.0 许可。</p><p><a class="link-arrow" href="https://github.com/fobstack/mallok">fobstack/mallok</a></p></article>
+      <article class="card"><h3>npm</h3><p>只有一个包：<code>mallok</code>。<code>latest</code> 是 0.1.0-rc.10，<code>next</code> 是 0.1.0-rc.11。</p><p><a class="link-arrow" href="https://www.npmjs.com/package/mallok">npmjs.com/package/mallok</a></p></article>
+    </div>
+  </div>
+</section>
+</main>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-main">
+      <h2 id="cta-title">一条命令，部署到你自己的账号。</h2>
+      <p>Mallok 会在你自己的 Cloudflare 账号里创建 Worker、D1 数据库和 R2 存储桶，并把网站部署上去。Mallok 不托管任何东西，也不需要注册 Mallok 账号。</p>
+    </div>
+    <div class="cta-side">
+      <div class="cmd" role="group" aria-label="创建命令"><code>npx mallok create my-site</code></div>
+      <p class="fine">需要 Node.js 22 及以上，并先执行 <code>wrangler login</code>。加上 <code>--no-deploy</code> 只在本地生成并检查项目，不创建云资源。当前为 0.1 候选版。</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/zh-cn/docs/#quick-start">阅读快速上手<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="https://demo.mallok.dev/">打开在线演示<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/zh-cn/" aria-label="Mallok 首页"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+        <p>面向多语言 B2B 网站的 Cloudflare 原生 CMS 与建站工具。基于 Apache-2.0 开源。</p>
+      </div>
+      <nav aria-label="产品">
+        <h2>产品</h2>
+        <ul>
+          <li><a href="/zh-cn/features/">功能</a></li>
+          <li><a href="/zh-cn/themes/">主题</a></li>
+          <li><a href="/zh-cn/cost/">成本阶梯</a></li>
+          <li><a href="/zh-cn/features/#roadmap">路线图</a></li>
+          <li><a href="https://demo.mallok.dev/">在线演示</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="文档">
+        <h2>文档</h2>
+        <ul>
+          <li><a href="/zh-cn/docs/">文档入口</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/GETTING_STARTED.md">入门指南</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md">架构（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">主题格式（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md">插件 API（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI 参考（英文）</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="项目">
+        <h2>项目</h2>
+        <ul>
+          <li><a href="https://github.com/fobstack/mallok">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/package/mallok">npm</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/RELEASE_STATUS.md">发布状态</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.zh-CN.md">贡献指南</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md">安全报告</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/LICENSE">Apache-2.0 许可证</a></li>
+          <li><a href="/zh-cn/brand/">品牌</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>Mallok 是独立的开源项目，与 Cloudflare、Resend、WordPress、Ghost 均无隶属关系。</span>
+      <span><a href="/docs/" lang="en" hreflang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

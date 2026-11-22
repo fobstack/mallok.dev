@@ -1,0 +1,22 @@
+{
+  "name": "Mallok",
+  "short_name": "Mallok",
+  "description": "Open-Source Edge CMS & Site Builder on Cloudflare Workers + D1 + R2",
+  "icons": [
+    {
+      "src": "/assets/brand/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/brand/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0D0B14",
+  "background_color": "#0D0B14",
+  "display": "standalone"
+}

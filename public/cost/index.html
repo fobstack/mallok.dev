@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cost — the Cloudflare cost ladder — Mallok</title>
+<meta name="description" content="Mallok is designed to start on Cloudflare&#x27;s free allowances, with one paid step: Workers Paid at $5 a month per account. The full cost ladder, line by line.">
+<link rel="canonical" href="https://mallok.dev/cost/">
+<link rel="alternate" hreflang="en" href="https://mallok.dev/cost/">
+<link rel="alternate" hreflang="zh-CN" href="https://mallok.dev/zh-cn/cost/">
+<link rel="alternate" hreflang="x-default" href="https://mallok.dev/cost/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mallok">
+<meta property="og:title" content="Cost — the Cloudflare cost ladder — Mallok">
+<meta property="og:description" content="Mallok is designed to start on Cloudflare&#x27;s free allowances, with one paid step: Workers Paid at $5 a month per account. The full cost ladder, line by line.">
+<meta property="og:url" content="https://mallok.dev/cost/">
+<meta property="og:image" content="https://mallok.dev/assets/brand/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0B14">
+<script>try{var t=localStorage.getItem('mallok-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='light'?'#FBFAFC':'#0D0B14'}}catch(e){}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/brand/favicon/safari-pinned-tab.svg" color="#7E22CE">
+<link rel="manifest" href="/assets/brand/favicon/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul><li><a href="/features/">Features</a></li><li><a href="/themes/">Themes</a></li><li><a href="/cost/" aria-current="page">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Demo</a></li></ul>
+    </nav>
+    <div class="head-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.2" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.8c1.7 1.8 2.5 3.9 2.5 6.2S9.7 12.4 8 14.2M8 1.8C6.3 3.6 5.5 5.7 5.5 8s.8 4.4 2.5 6.2" stroke-width="1.4"/></svg><span>EN</span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <ul class="lang-list"><li><a href="/cost/" lang="en" hreflang="en" aria-current="true"><span>English</span><svg class="check" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/zh-cn/cost/" lang="zh-CN" hreflang="zh-CN"><span>简体中文</span></a></li></ul>
+      </details>
+      <button class="theme-toggle" type="button" data-label-light="Switch to light mode" data-label-dark="Switch to dark mode" aria-label="Switch to light mode"><svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <a class="icon-link" href="https://github.com/fobstack/mallok" aria-label="Mallok on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="ico-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Menu
+        </summary>
+        <nav aria-label="Menu">
+          <ul><li><a href="/features/">Features</a></li><li><a href="/themes/">Themes</a></li><li><a href="/cost/" aria-current="page">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Live demo<span>demo.mallok.dev</span></a></li><li><a href="https://github.com/fobstack/mallok">GitHub<span>fobstack/mallok</span></a></li><li><a href="https://www.npmjs.com/package/mallok">npm<span>mallok</span></a></li></ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow"><b>Cost</b>The Cloudflare cost ladder</p>
+    <h1 id="page-title">Start on the free allowances. One paid step, and it changes nothing else.</h1>
+    <p class="lede">Mallok itself is free and open source, and it hosts nothing: what you pay, you pay to Cloudflare (and to Resend if you send email) from your own accounts. Mallok is designed to start on Cloudflare's free allowances. That is a design target — not a promise of unlimited free service.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>01</b>The two rungs</p>
+      <h2 id="steps-title">Free at first; $5 a month per account when there is volume.</h2>
+      <p>Every Cloudflare product Mallok depends on has a free tier. The one paid step is Workers Paid. It raises limits on the same Worker, the same D1 database and the same R2 bucket — no migration, no architecture change.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <span class="tag tag-live">STEP 0</span>
+        <span class="price">$0<small> to Cloudflare</small></span>
+        <h3>Free allowances</h3>
+        <p>100k Worker requests a day at 10 ms CPU each, 5 GB of D1, 10 GB of R2, free caching and purging, five cron triggers per account, Turnstile and DNS. You still need a domain, which is not free.</p>
+      </div>
+      <div class="rung rung-paid">
+        <span class="tag tag-accent">STEP 1</span>
+        <span class="price">$5<small> / month / account</small></span>
+        <h3>Workers Paid</h3>
+        <p>10M requests and 30M CPU-milliseconds a month, 30 s of CPU per invocation by default, far higher D1 limits and 250 cron triggers. Charged per Cloudflare account, so it covers every site in that account. Usage beyond the included amounts is billed by Cloudflare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" aria-labelledby="table-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>02</b>The ladder, line by line</p>
+      <h2 id="table-title">What each dependency gives you free, and what comes after.</h2>
+    </div>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="ladder-caption">
+<table class="data">
+<caption id="ladder-caption">Figures from Cloudflare's and Resend's official documentation, checked 2026-08-28. They may have changed since; confirm against the providers' current pricing pages before you rely on them.</caption>
+<thead><tr><th scope="col">Purpose · product</th><th scope="col">Free tier</th><th scope="col">Beyond it</th></tr></thead>
+<tbody><tr><th scope="row">Rendering, admin, API<small>Workers</small></th><td>100k requests/day, 10 ms CPU each; a script up to 64 MiB uncompressed</td><td>Workers Paid at $5/month: 10M requests, 30M CPU-ms, 30 s CPU by default; the same 64 MiB script limit</td></tr><tr><th scope="row">Content, inquiries<small>D1</small></th><td>5 GB total, 5M rows read/day, 100k rows written/day; exceeding it makes D1 unavailable for the day</td><td>With Paid: 25B rows read/month, 50M written/month, $0.75/GB past 5 GB</td></tr><tr><th scope="row">Images, attachments<small>R2</small></th><td>10 GB-month, 1M writes and 10M reads/month, egress free</td><td>$0.015/GB-month</td></tr><tr><th scope="row">The admin app<small>Workers Static Assets</small></th><td>Unlimited free requests, 20k files, 25 MiB each</td><td>With Paid, up to 100k files</td></tr><tr><th scope="row">Page caching and purging<small>Cache API + Purge API</small></th><td>Free; ample single-file purge quota, 5 tag/host/everything purges per minute</td><td>Higher on Pro and Business</td></tr><tr><th scope="row">Scheduled publishing, email retries<small>Cron Triggers</small></th><td><strong>5 per account</strong></td><td>250 with Paid</td></tr><tr><th scope="row">Form abuse protection<small>Turnstile</small></th><td>Free, 20 widgets, 10 hostnames each</td><td>Enterprise</td></tr><tr><th scope="row">Domain and DNS<small>Registrar + DNS</small></th><td>Domains at cost, DNS free</td><td>—</td></tr><tr><th scope="row">Visitor analytics<small>Cloudflare site analytics</small></th><td>Free</td><td>—</td></tr><tr><th scope="row">Sending email<small>Resend</small></th><td>3,000/month, 100/day, 3 domains</td><td>Pro at $20/month for 50,000</td></tr></tbody>
+</table></div>
+    <p class="fine" style="margin-top:.9rem">Source: <a href="https://github.com/fobstack/mallok/blob/main/docs/PRODUCT_VISION.md">product vision</a>, section 7, and <a href="https://github.com/fobstack/mallok/blob/main/docs/CLOUDFLARE_RESOURCES.md">Cloudflare resources</a>. Mallok is not affiliated with Cloudflare or Resend and does not set these prices.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="limits-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>03</b>Limits that shape the product</p>
+      <h2 id="limits-title">The free tier has edges. Here is where they are.</h2>
+    </div>
+    <div class="grid cols-2">
+      <div class="callout">
+        <h3>Five cron triggers per account</h3>
+        <p>Each Mallok site uses one cron trigger for scheduled publishing and email retries. One free Cloudflare account therefore carries scheduled work for at most five sites; a larger portfolio needs Workers Paid.</p>
+      </div>
+      <div class="callout">
+        <h3>D1's daily cap is a hard stop</h3>
+        <p>Exceeding D1's free daily rows makes the database unavailable for the rest of that day, and with it everything that needs D1: cold renders, saves and inquiries. Watch usage as a site grows.</p>
+      </div>
+      <div class="callout">
+        <h3>10 ms of CPU on the free plan</h3>
+        <p>Cache hits measured 0–1 ms of CPU on rc.5. Cold renders measured p50 11 ms and p95 35 ms, above the 10 ms target in 16 of 30 samples; none failed in that sample. This is the release candidates' known limitation, and those rc.5 figures do not certify later candidates.
+          <a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_STATUS.md">Release status</a></p>
+      </div>
+      <div class="callout info">
+        <h3>A custom domain is required for caching</h3>
+        <p>Edge caching — the thing that keeps nearly every request off the Worker's CPU budget — works on a custom domain. A <code>workers.dev</code> address is for preview only. Budget for a domain; Cloudflare Registrar sells them at cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" aria-labelledby="unused-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>04</b>Deliberately unused</p>
+        <h2 id="unused-title">What Mallok leaves out to keep the ladder short.</h2>
+        <p class="lede">A dependency with a tight free tier or no free tier would add a second paid step. So the Worker uses D1, R2, Static Assets, the Cache API and one cron trigger — and nothing else.</p>
+      </div>
+      <div class="mini">
+        <div class="mini-row"><span>Workers KV</span><span>1,000 writes a day on the free tier</span></div>
+        <div class="mini-row"><span>Cloudflare Images</span><span>paid — images are resized in the browser instead</span></div>
+        <div class="mini-row"><span>Email Workers send</span><span>Paid-only, verified addresses only</span></div>
+        <div class="mini-row"><span>Queues</span><span>not needed — cron covers email retries</span></div>
+        <div class="mini-row"><span>Durable Objects</span><span>not used</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="notfree-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>05</b>What is not free</p>
+      <h2 id="notfree-title">The honest total.</h2>
+    </div>
+    <div class="grid cols-3">
+      <article class="card"><h3>Your domain</h3><p>Needed for caching and for a credible company site. Priced by your registrar.</p></article>
+      <article class="card"><h3>Email at volume</h3><p>Inquiry email goes through Resend. Its free tier covers 3,000 emails a month and 100 a day; beyond that is Resend's paid plan.</p></article>
+      <article class="card"><h3>Your time</h3><p>Setup needs someone comfortable with Node and a terminal. Themes, plugins and upgrades need a redeploy by that same person.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-main">
+      <h2 id="cta-title">One command. Your account. Your content.</h2>
+      <p>Mallok creates a Worker, a D1 database and an R2 bucket in your own Cloudflare account and deploys the site there. Nothing is hosted by Mallok, and there is no Mallok account to open.</p>
+    </div>
+    <div class="cta-side">
+      <div class="cmd" role="group" aria-label="Create command"><code>npx mallok create my-site</code></div>
+      <p class="fine">Needs Node.js 22+ and <code>wrangler login</code>. Add <code>--no-deploy</code> to generate and check a project locally without creating cloud resources. Currently a 0.1 release candidate.</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/docs/#quick-start">Read the quick start<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="https://demo.mallok.dev/">Open the live demo<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+        <p>The Cloudflare-native CMS and website builder for multilingual B2B websites. Open source under Apache-2.0.</p>
+      </div>
+      <nav aria-label="Product">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/themes/">Themes</a></li>
+          <li><a href="/cost/">Cost ladder</a></li>
+          <li><a href="/features/#roadmap">Roadmap</a></li>
+          <li><a href="https://demo.mallok.dev/">Live demo</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Documentation">
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="/docs/">Docs home</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/GETTING_STARTED.md">Getting started</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">Theme format</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md">Plugin API</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI reference</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/fobstack/mallok">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/package/mallok">npm</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_STATUS.md">Release status</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.md">Contributing</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md">Security reporting</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/LICENSE">Apache-2.0 licence</a></li>
+          <li><a href="/brand/">Brand</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>Mallok is an independent open-source project and is not affiliated with Cloudflare, Resend, WordPress or Ghost.</span>
+      <span><a href="/zh-cn/cost/" lang="zh-CN" hreflang="zh-CN">简体中文</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features — Mallok</title>
+<meta name="description" content="What Mallok 0.1 ships: Markdown content, multilingual URLs, Liquid themes, plugins, inquiries, a React admin, a CLI, built-in SEO — and what it deliberately leaves out.">
+<link rel="canonical" href="https://mallok.dev/features/">
+<link rel="alternate" hreflang="en" href="https://mallok.dev/features/">
+<link rel="alternate" hreflang="zh-CN" href="https://mallok.dev/zh-cn/features/">
+<link rel="alternate" hreflang="x-default" href="https://mallok.dev/features/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mallok">
+<meta property="og:title" content="Features — Mallok">
+<meta property="og:description" content="What Mallok 0.1 ships: Markdown content, multilingual URLs, Liquid themes, plugins, inquiries, a React admin, a CLI, built-in SEO — and what it deliberately leaves out.">
+<meta property="og:url" content="https://mallok.dev/features/">
+<meta property="og:image" content="https://mallok.dev/assets/brand/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0B14">
+<script>try{var t=localStorage.getItem('mallok-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='light'?'#FBFAFC':'#0D0B14'}}catch(e){}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/brand/favicon/safari-pinned-tab.svg" color="#7E22CE">
+<link rel="manifest" href="/assets/brand/favicon/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul><li><a href="/features/" aria-current="page">Features</a></li><li><a href="/themes/">Themes</a></li><li><a href="/cost/">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Demo</a></li></ul>
+    </nav>
+    <div class="head-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.2" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.8c1.7 1.8 2.5 3.9 2.5 6.2S9.7 12.4 8 14.2M8 1.8C6.3 3.6 5.5 5.7 5.5 8s.8 4.4 2.5 6.2" stroke-width="1.4"/></svg><span>EN</span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <ul class="lang-list"><li><a href="/features/" lang="en" hreflang="en" aria-current="true"><span>English</span><svg class="check" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/zh-cn/features/" lang="zh-CN" hreflang="zh-CN"><span>简体中文</span></a></li></ul>
+      </details>
+      <button class="theme-toggle" type="button" data-label-light="Switch to light mode" data-label-dark="Switch to dark mode" aria-label="Switch to light mode"><svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <a class="icon-link" href="https://github.com/fobstack/mallok" aria-label="Mallok on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="ico-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Menu
+        </summary>
+        <nav aria-label="Menu">
+          <ul><li><a href="/features/" aria-current="page">Features</a></li><li><a href="/themes/">Themes</a></li><li><a href="/cost/">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Live demo<span>demo.mallok.dev</span></a></li><li><a href="https://github.com/fobstack/mallok">GitHub<span>fobstack/mallok</span></a></li><li><a href="https://www.npmjs.com/package/mallok">npm<span>mallok</span></a></li></ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow"><b>Features</b>What ships in 0.1</p>
+    <h1 id="page-title">Everything a multilingual company site needs, and a clear line around the rest.</h1>
+    <p class="lede">Mallok is a complete CMS — content, themes, an admin, a CLI, inquiries and SEO — published as one npm package and running as one Worker. This page lists what it does, how it does it, and what it deliberately leaves out.</p>
+    <nav aria-label="On this page"><ul class="toc"><li><a href="#content">Content</a></li><li><a href="#multilingual">Multilingual</a></li><li><a href="#themes">Themes</a></li><li><a href="#inquiry">Inquiries</a></li><li><a href="#admin">Admin</a></li><li><a href="#cli">CLI</a></li><li><a href="#rendering">Rendering & caching</a></li><li><a href="#seo">SEO</a></li><li><a href="#static">Static build</a></li><li><a href="#boundary">The boundary</a></li><li><a href="#limits">What it is not</a></li><li><a href="#roadmap">Roadmap</a></li></ul></nav>
+  </div>
+</section>
+
+<section class="section" id="content" aria-labelledby="content-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>01</b>Content</p>
+        <h2 id="content-title">Standard Markdown, stored as written.</h2>
+        <p class="lede">Content is CommonMark with GFM and a YAML front-matter block. D1 holds the complete text of each file; images and attachments are referenced by relative path and live in R2.</p>
+        <ul class="ticks"><li>Draft, published and scheduled states.</li><li>Content kinds beyond page and article are declared by the theme — the B2B starter brings products, categories, cases, FAQs and news.</li><li>Content is always treated as untrusted: HTML is sanitised against an allow-list when the fragment is generated, and the stored Markdown is never modified.</li><li>Export produces the same bundles import accepts. Round-trip fidelity is covered by tests; a full restore into a second live deployment is still on the acceptance list.</li></ul>
+      </div>
+      <div><figure class="code" style="margin:0">
+  <figcaption class="code-bar"><span>a content bundle</span><span>import / export format</span></figcaption>
+  <pre tabindex="0"><code>titanium-price-2026-08/
+├── index.md        <span class="c"># the default locale</span>
+├── index.zh-CN.md  <span class="c"># other locales, by filename</span>
+├── index.de.md
+├── images/         <span class="c"># shared by every locale</span>
+│   ├── hero.jpg
+│   └── chart.png
+└── files/
+    └── datasheet.pdf</code></pre>
+</figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="multilingual" aria-labelledby="multilingual-title">
+  <div class="wrap">
+    <div class="feature flip">
+      <div>
+        <p class="eyebrow"><b>02</b>Multilingual</p>
+        <h2 id="multilingual-title">Languages are a property of content, not a plugin.</h2>
+        <p class="lede">Each item carries a locale and a translation group. The main language has no URL prefix; every other language is served under its own.</p>
+        <ul class="ticks"><li>hreflang in the sitemap and canonical links are generated automatically.</li><li>A bundle holds every translation of one item and shares its images between them.</li><li>Theme interface strings follow the site's language through language packs.</li><li>0.1 delivers the model, the URL rules and simple translation management. Machine translation is a roadmap item, not a current feature.</li></ul>
+      </div>
+      <div><div class="mini">
+  <div class="mini-row"><span>/products/titanium-bar</span><span>en · main language, no prefix</span></div>
+  <div class="mini-row"><span>/zh-CN/products/titanium-bar</span><span>zh-CN</span></div>
+  <div class="mini-row"><span>/de/products/titanium-bar</span><span>de</span></div>
+</div>
+<figure class="code" style="margin:1rem 0 0">
+  <figcaption class="code-bar"><span>sitemap.xml</span><span>generated</span></figcaption>
+  <pre tabindex="0"><code>&lt;<span class="k">url</span>&gt;
+  &lt;<span class="k">loc</span>&gt;https://example.com/products/titanium-bar&lt;/<span class="k">loc</span>&gt;
+  &lt;<span class="k">xhtml:link</span> rel=<span class="s">"alternate"</span> hreflang=<span class="s">"en"</span> href=<span class="s">"…/products/titanium-bar"</span>/&gt;
+  &lt;<span class="k">xhtml:link</span> rel=<span class="s">"alternate"</span> hreflang=<span class="s">"zh-CN"</span> href=<span class="s">"…/zh-CN/products/titanium-bar"</span>/&gt;
+  &lt;<span class="k">xhtml:link</span> rel=<span class="s">"alternate"</span> hreflang=<span class="s">"de"</span> href=<span class="s">"…/de/products/titanium-bar"</span>/&gt;
+&lt;/<span class="k">url</span>&gt;</code></pre>
+</figure>
+<p class="fine" style="margin-top:.6rem">Simplified illustration of the sitemap output.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="themes" aria-labelledby="themes-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>03</b>Themes and plugins</p>
+        <h2 id="themes-title">Declarative themes. Real plugins. Both honest about deployment.</h2>
+        <p class="lede">A theme is a directory of restricted Liquid templates plus a theme.json. A plugin is real JavaScript with its own tables, routes, settings and scheduled work. Both live in your project's source and are bundled at build time.</p>
+        <ul class="ticks"><li>Themes contain no arbitrary JavaScript; any client script must be declared in theme.json.</li><li>Switching a theme changes no content id and no public URL. A kind the new theme does not know renders through its page layout.</li><li>Official and third-party plugins take the same path: source in the repository, bundled at build.</li><li><strong>Installing or changing a theme or plugin needs a build and a redeploy.</strong> Once deployed, a plugin's enable switch, settings and secrets are live from the admin.</li><li>A plugin runs with real access inside your own account — the same trust boundary as a WordPress plugin. Review it like any other code you ship.</li></ul>
+      </div>
+      <div><figure class="code" style="margin:0">
+  <figcaption class="code-bar"><span>src/themes/atelier/theme.json</span><span>excerpt</span></figcaption>
+  <pre tabindex="0"><code>{
+  <span class="k">"id"</span>: <span class="s">"atelier"</span>,
+  <span class="k">"kinds"</span>: {
+    <span class="k">"product"</span>: {
+      <span class="k">"layout"</span>: <span class="s">"layouts/product.liquid"</span>,
+      <span class="k">"listLayout"</span>: <span class="s">"layouts/list.liquid"</span>,
+      <span class="k">"base"</span>: <span class="s">"products"</span>,
+      <span class="k">"fields"</span>: {
+        <span class="k">"grade"</span>: { <span class="k">"type"</span>: <span class="s">"string"</span>, <span class="k">"label"</span>: <span class="s">"Grade"</span> },
+        <span class="k">"specs"</span>: { <span class="k">"type"</span>: <span class="s">"keyvalue"</span>, <span class="k">"label"</span>: <span class="s">"Properties"</span> },
+        <span class="k">"gallery"</span>: { <span class="k">"type"</span>: <span class="s">"image[]"</span>, <span class="k">"label"</span>: <span class="s">"Gallery"</span> },
+        <span class="k">"datasheet"</span>: { <span class="k">"type"</span>: <span class="s">"file"</span>, <span class="k">"accept"</span>: [<span class="s">".pdf"</span>] }
+      }
+    }
+  },
+  <span class="k">"clientScripts"</span>: [ <span class="c">/* declared, never implicit */</span> ]
+}</code></pre>
+</figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="inquiry" aria-labelledby="inquiry-title">
+  <div class="wrap">
+    <div class="feature flip">
+      <div>
+        <p class="eyebrow"><b>04</b>Inquiries</p>
+        <h2 id="inquiry-title">One form, from product page to inbox.</h2>
+        <p class="lede">The official inquiry plugin is what turns a catalogue into a sales channel. Put <code>[[inquiry]]</code> in a page and the form renders when the plugin is enabled.</p>
+        <ul class="ticks"><li>Cloudflare Turnstile against spam.</li><li>Email to you through Resend, with an optional automatic confirmation to the buyer.</li><li>Every inquiry is stored in D1, readable in the admin like an inbox, exportable as CSV.</li><li>Third-party keys are encrypted (AES-GCM) before they are stored in D1; they never go into content or source.</li></ul>
+      </div>
+      <div><div class="flow">
+  <div class="flow-row" style="grid-template-columns:minmax(0,1fr)">
+    <ol class="steps">
+      <li><span class="step">Buyer submits the form<small>[[inquiry]]</small></span></li>
+      <li><span class="step">Turnstile<small>spam check</small></span></li>
+      <li><span class="step">Stored in D1</span></li>
+      <li><span class="step">Resend<small>email to you, optional confirmation to the buyer</small></span></li>
+      <li><span class="step">Admin inbox<small>CSV export</small></span></li>
+    </ol>
+  </div>
+</div>
+<div class="callout" style="margin-top:1rem">
+  <p><strong>In progress:</strong> real Turnstile and Resend delivery has not yet been accepted end to end for the current release candidates. Test with addresses you control before relying on it.</p>
+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin" aria-labelledby="admin-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>05</b>Admin</p>
+        <h2 id="admin-title">An admin that only shows what you can actually change.</h2>
+        <p class="lede">A React single-page admin served from the same Worker, in English and Simplified Chinese. Nobody using it needs to know what a Worker, D1 or a cache tag is.</p>
+        <ul class="ticks"><li>A Markdown source editor beside a field form generated from the content kind's schema.</li><li>A media library; uploads are converted to WebP with width variants in the browser.</li><li>A setup wizard for the administrator, site name, languages, example content and domain.</li><li>Scoped API tokens for the CLI and for content pipelines.</li></ul>
+      </div>
+      <div><div class="mini">
+  <div class="mini-row"><span>Content</span><span>Markdown editor + fields from the kind's schema</span></div>
+  <div class="mini-row"><span>Media</span><span>upload, WebP variants, picker</span></div>
+  <div class="mini-row"><span>Inquiries</span><span>read like an inbox, export CSV</span></div>
+  <div class="mini-row"><span>Settings</span><span>site, languages, navigation, SEO, email, cache</span></div>
+  <div class="mini-row"><span>Plugins</span><span>enable switch + settings, live</span></div>
+  <div class="mini-row"><span>Themes, plugin install</span><span class="warn">needs a redeploy — and says so</span></div>
+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="cli" aria-labelledby="cli-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>06</b>CLI</p>
+      <h2 id="cli-title">The same data path, from a terminal.</h2>
+      <p>The CLI talks to the same management API as the admin, so a folder published from CI and an article saved in the browser are stored, rendered and purged the same way.</p>
+    </div>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="CLI commands">
+<table class="data narrow">
+<thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+<tbody><tr><th scope="row"><code>mallok create &lt;dir&gt;</code></th><td>Create a project, verify it, then deploy it to your Cloudflare account. <code>--no-deploy</code> stops before any cloud resource is created.</td></tr><tr><th scope="row"><code>mallok publish &lt;dir&gt;</code></th><td>Publish one or more content bundles, images included.</td></tr><tr><th scope="row"><code>mallok import &lt;dir&gt;</code></th><td>Import bundles, keeping the status their front matter says.</td></tr><tr><th scope="row"><code>mallok export &lt;dir&gt;</code></th><td>Export the whole site to a directory of bundles.</td></tr><tr><th scope="row"><code>mallok build &lt;dir&gt;</code></th><td>Compile a local directory into a static site, touching neither D1 nor the network.</td></tr><tr><th scope="row"><code>mallok upgrade --to &lt;version&gt;</code></th><td>Move a project onto another Mallok release. Takes effect when you redeploy.</td></tr><tr><th scope="row"><code>mallok preview &lt;dir&gt;</code></th><td>Render bundles locally, offline.</td></tr></tbody>
+</table></div>
+<p class="fine" style="margin-top:.75rem">Also: <code>media push</code>, <code>setup-key</code>, <code>repair</code>, <code>destroy</code>. Every site command accepts <code>--dry-run</code> and <code>--json</code>. See the <a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI reference</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="rendering" aria-labelledby="rendering-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>07</b>Rendering and caching</p>
+      <h2 id="rendering-title">Two stages, three caches, one deterministic core.</h2>
+      <p>The render core has no platform dependencies, so the CLI's local preview, the admin's live preview and the Worker in production run the same function and produce the same bytes.</p>
+    </div>
+    <div class="diagram" tabindex="0" role="region" aria-label="Two-stage rendering diagram"><svg viewBox="0 0 940 300" role="img" aria-label="Diagram of two-stage rendering. Stage one runs on save: Markdown is parsed, sanitised and stored as an HTML fragment in D1. Stage two runs on a cache miss: the fragment and the Liquid theme produce the full page, which is stored in the edge cache." xmlns="http://www.w3.org/2000/svg">
+<text x="24" y="34" class="t-mono f-hit" style="font-weight:600;letter-spacing:.06em">STAGE ONE · ON SAVE</text>
+<rect x="24" y="48" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="38" y="74" class="t-sans f-ink">Markdown</text><text x="38" y="93" class="t-mono f-muted" style="font-size:10.5px">+ YAML front matter</text><path d="M224 79h26" class="s-line" stroke-width="1.4"/><path d="M246 75l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="256" y="48" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="270" y="74" class="t-sans f-ink">Parse + sanitise</text><text x="270" y="93" class="t-mono f-muted" style="font-size:10.5px">remark / rehype, allow-list</text><path d="M456 79h26" class="s-line" stroke-width="1.4"/><path d="M478 75l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="488" y="48" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="502" y="74" class="t-sans f-ink">Resolve media</text><text x="502" y="93" class="t-mono f-muted" style="font-size:10.5px">images/ → R2 URLs, srcset</text><path d="M688 79h26" class="s-line" stroke-width="1.4"/><path d="M710 75l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="720" y="48" width="196" height="62" rx="8" class="f-hit-tint" stroke-width="1" style="stroke:var(--line-strong)"/><text x="734" y="74" class="t-sans f-ink">HTML fragment</text><text x="734" y="93" class="t-mono f-muted" style="font-size:10.5px">D1 render_cache (derived)</text>
+<path d="M818 110v36H122v32" class="s-line" stroke-width="1.4" stroke-dasharray="4 4"/>
+<path d="M118 174l4 5 4-5" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="170" class="t-mono f-accent" style="font-weight:600;letter-spacing:.06em" dx="120">STAGE TWO · ON REQUEST (CACHE MISS)</text>
+<rect x="24" y="190" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="38" y="216" class="t-sans f-ink">Fragment + data</text><text x="38" y="235" class="t-mono f-muted" style="font-size:10.5px">bounded D1 batches</text><path d="M224 221h26" class="s-line" stroke-width="1.4"/><path d="M246 217l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="256" y="190" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="270" y="216" class="t-sans f-ink">Liquid theme</text><text x="270" y="235" class="t-mono f-muted" style="font-size:10.5px">templates ship in the Worker</text><path d="M456 221h26" class="s-line" stroke-width="1.4"/><path d="M478 217l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="488" y="190" width="196" height="62" rx="8" class="f-paper" stroke-width="1" style="stroke:var(--line-strong)"/><text x="502" y="216" class="t-sans f-ink">Full page</text><text x="502" y="235" class="t-mono f-muted" style="font-size:10.5px">Cache-Control + Cache-Tag</text><path d="M688 221h26" class="s-line" stroke-width="1.4"/><path d="M710 217l5 4-5 4" class="s-line" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="720" y="190" width="196" height="62" rx="8" class="f-accent-tint" stroke-width="1" style="stroke:var(--line-strong)"/><text x="734" y="216" class="t-sans f-ink">Edge cache</text><text x="734" y="235" class="t-mono f-muted" style="font-size:10.5px">cache.put(), purge by tag</text>
+<text x="24" y="282" class="t-mono f-faint" style="font-size:10.5px">Same Markdown + pipeline version + theme version → byte-identical HTML. No clock, randomness or request data in the render core.</text>
+</svg></div>
+    <div style="margin-top:1.25rem"><div class="table-wrap" tabindex="0" role="region" aria-label="The three cache layers">
+<table class="data">
+<thead><tr><th scope="col">Layer</th><th scope="col">Where</th><th scope="col">Key</th><th scope="col">What it solves</th></tr></thead>
+<tbody><tr><th scope="row">Edge cache</th><td>Cache API</td><td>The request URL</td><td>Visitor requests never reach rendering</td></tr><tr><th scope="row">Fragment cache</th><td>D1 <code>render_cache</code></td><td>Markdown hash + pipeline version + plugin hash</td><td>A cold render never parses Markdown</td></tr><tr><th scope="row">Template cache</th><td>Isolate module scope</td><td>Theme id + version</td><td>Liquid is never parsed twice in one isolate</td></tr></tbody>
+</table></div></div>
+    <div class="grid cols-3" style="margin-top:1.25rem">
+      <article class="card"><h3>Bounded cold renders</h3><p>A cold render makes at most four D1 round trips regardless of how much content the site holds. List pages never parse body Markdown and never query per item.</p></article>
+      <article class="card"><h3>Purge by tag</h3><p>Every page carries Cache-Tags for the site, its content, its kind and its locale. A save purges exactly the pages that show the item. A failed purge is recorded and shown in the admin on <code>main</code>; released candidates up to rc.11 can report a failed purge as success.</p></article>
+      <article class="card"><h3>The edge keeps it, the browser revalidates</h3><p>Pages are cached at the edge for an hour by default (adjustable) and browsers are told to revalidate, so a purge is not defeated by a copy sitting in someone's browser.</p></article>
+    </div>
+    <h3 style="margin-top:2.5rem;font-size:1.2rem">Measured on rc.5, one deployment</h3>
+    <dl class="measure">
+  <div class="stat">
+    <dt>Cache hit · CPU</dt>
+    <dd><span class="big">0<small> ms p50 / p95</small></span>
+    <p>Maximum 1 ms across 30 confirmed hits. Zero is the value the platform recorded, not a claim of zero computation.</p></dd>
+  </div>
+  <div class="stat span-2">
+    <dt>Cold render · CPU, 30 confirmed misses</dt>
+    <dd>
+      <div class="bars" role="img" aria-label="Cold render CPU: p50 11 milliseconds, p95 35 milliseconds, maximum 44 milliseconds.">
+        <div class="bar"><span>p50</span><i style="--w:25%"></i><b>11 ms</b></div>
+        <div class="bar"><span>p95</span><i style="--w:79.5%;--c:var(--miss)"></i><b>35 ms</b></div>
+        <div class="bar"><span>max</span><i style="--w:100%;--c:var(--miss)"></i><b>44 ms</b></div>
+      </div>
+      <p class="target-note">Free-plan target: 10 ms. Exceeded in 16 of 30 cold samples; none failed.</p>
+    </dd>
+  </div>
+  <div class="stat">
+    <dt>Mobile Lighthouse</dt>
+    <dd><span class="big">95–97<small> performance</small></span>
+    <p>Accessibility, best practices and SEO scored 100 in all six runs (home and article).</p></dd>
+  </div>
+</dl>
+    <div class="callout" style="margin-top:1rem">
+  <p><strong>Read these numbers for what they are.</strong> They come from one isolated deployment of 0.1.0-rc.5 on a custom domain. No CPU sample has been taken for rc.6 to rc.11, which add work to cold renders, so these figures do not certify the current candidates. Cold renders above 10 ms CPU are a known, accepted limitation of the release candidates.
+    <a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_STATUS.md">Full release status</a></p>
+</div>
+  </div>
+</section>
+
+<section class="section tinted" id="seo" aria-labelledby="seo-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>08</b>SEO</p>
+        <h2 id="seo-title">Structured output, built into the core.</h2>
+        <p class="lede">Search output is not left to a plugin or to each theme author. Every Mallok site produces the same set.</p>
+        <ul class="ticks"><li>Sitemap with hreflang, RSS feeds, canonical links and Open Graph tags.</li><li>JSON-LD for Organization, Article, Product and FAQ.</li><li>Changing a slug writes a 301 redirect automatically.</li><li>Semantic HTML and no theme JavaScript on content pages. Cloudflare features you turn on, such as analytics, can still inject their own script.</li></ul>
+      </div>
+      <div><ul class="chips" aria-label="SEO output">
+  <li>sitemap.xml + hreflang</li><li>RSS</li><li>rel=canonical</li><li>Open Graph</li>
+  <li>JSON-LD · Organization</li><li>JSON-LD · Article</li><li>JSON-LD · Product</li><li>JSON-LD · FAQ</li>
+  <li>301 on slug change</li><li>signed draft preview links</li>
+</ul>
+<p class="fine" style="margin-top:1rem">Deliberately absent: automatic language detection and redirection. Visitors and crawlers get the URL they asked for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="static" aria-labelledby="static-title">
+  <div class="wrap">
+    <div class="feature flip">
+      <div>
+        <p class="eyebrow"><b>09</b>Static build</p>
+        <h2 id="static-title">Prefer plain files? There is a second path.</h2>
+        <p class="lede"><code>mallok build</code> compiles a local directory — the same layout <code>mallok export</code> produces — into a complete static site: kinds, tags, several languages and the SEO endpoints, through the same render functions.</p>
+        <ul class="ticks"><li>It touches neither D1 nor the network.</li><li>Broken references are reported as errors instead of silently dropped.</li><li>It is a second path beside the Worker, not a replacement: the costs on the right are the price.</li></ul>
+      </div>
+      <div><figure class="code" style="margin:0">
+  <figcaption class="code-bar"><span>terminal</span><span>the path without D1</span></figcaption>
+  <pre tabindex="0"><code>mallok build ./my-site \
+  --theme ./src/themes/atelier \
+  --origin https://example.com</code></pre>
+</figure>
+<div class="mini" style="margin-top:1rem">
+  <div class="mini-row"><span>Inquiry form</span><span class="warn">not available — removed and reported</span></div>
+  <div class="mini-row"><span>Admin editor</span><span class="warn">not available</span></div>
+  <div class="mini-row"><span>Instant and scheduled publishing</span><span class="warn">rebuild and redeploy instead</span></div>
+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="boundary" aria-labelledby="boundary-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>10</b>The boundary</p>
+      <h2 id="boundary-title">What is live immediately, and what needs a redeploy.</h2>
+      <p>This is the single most important line in the product, so it is drawn in the interface as well as here.</p>
+    </div>
+    <div class="m-score">
+  <div class="m-score-row m-score-row-live"><div><span class="tag tag-live"><span class="dot"></span>Live immediately</span><h3>The content timeline</h3></div><ol class="m-track m-track-live"><li>save</li><li>D1 write</li><li>purge by tag</li><li>live</li></ol></div>
+  <div class="m-score-row"><div><span class="tag tag-frame">Build + redeploy</span><h3>The frame timeline</h3></div><ol class="m-track"><li>edit source</li><li>build</li><li>deploy</li><li>live</li></ol></div>
+</div>
+<div class="lanes-flat">
+  <div class="lane"><p>Changed in the admin or through the CLI by whoever runs the site day to day. No build, no deployment.</p><ul>
+      <li>Pages, articles, products, media<span>content</span></li>
+      <li>Site name, languages, navigation, SEO defaults<span>settings</span></li>
+      <li>The options a theme exposes<span>theme options</span></li>
+      <li>Plugin on/off switch, settings and secrets<span>plugin settings</span></li>
+    </ul></div>
+  <div class="lane"><p>Changed in the source tree by someone technical. It travels with the code and takes effect on deployment — never as a one-click switch.</p><ul>
+      <li>Switching or editing a theme<span>themes</span></li>
+      <li>Installing or updating a plugin<span>plugins</span></li>
+      <li>Moving to a new Mallok release<span><code>mallok upgrade</code></span></li>
+      <li>A theme switch migrates no content and changes no URL<span>guarantee</span></li>
+    </ul></div>
+</div>
+  </div>
+</section>
+
+<section class="section" id="limits" aria-labelledby="limits-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>11</b>What it is not</p>
+      <h2 id="limits-title">Deliberately out of scope for 0.1.</h2>
+      <p>Knowing where a tool stops is part of trusting it.</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card"><h3>Not a hosting service</h3><p>No Mallok accounts, billing or multi-tenant control plane. Your site runs in your Cloudflare account and nowhere else.</p></article>
+      <article class="card"><h3>Not a shop — yet</h3><p>0.1 goes as far as inquiries: no cart, payment, membership or comments. Commerce is a later direction, as plugins.</p></article>
+      <article class="card"><h3>Not a compatibility layer</h3><p>It does not run PHP, WordPress themes or plugins, or Astro or Next.js projects. A WordPress importer is on the roadmap.</p></article>
+      <article class="card"><h3>Not for application logic</h3><p>Sites that need freely written server-side business logic, permission systems or complex form flows are a poor fit.</p></article>
+      <article class="card"><h3>Not collaborative editing</h3><p>There is no real-time co-editing in 0.1.</p></article>
+      <article class="card"><h3>Not multi-cloud</h3><p>One cloud vendor and one email provider, stated rather than disguised. The mitigation is that content and inquiries export at any time.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="roadmap" aria-labelledby="roadmap-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>12</b>Roadmap</p>
+      <h2 id="roadmap-title">Directions, not commitments.</h2>
+      <p>None of this is in the current release candidates, and none of it has a date.</p>
+    </div>
+    <ol class="roadmap">
+  <li><h3>0.2</h3><ul>
+    <li>A visual editor</li>
+    <li>Product import from CSV</li>
+    <li>An AI translation plugin</li>
+    <li>An inquiry cart: several products in one request for quotation</li>
+    <li>A WordPress importer</li>
+  </ul></li>
+  <li><h3>0.3</h3><ul>
+    <li>Payment for samples and small orders through a hosted checkout page</li>
+  </ul></li>
+  <li><h3>1.0</h3><ul>
+    <li>A hosted setup assistant for non-technical owners</li>
+    <li>Marketplaces for themes, starters and plugins</li>
+  </ul></li>
+</ol>
+    <p class="fine" style="margin-top:1rem">Source: <a href="https://github.com/fobstack/mallok/blob/main/docs/PRODUCT_VISION.md">the product vision</a>, section 9. A “Deploy to Cloudflare” button is also planned and is not available yet.</p>
+  </div>
+</section>
+</main>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-main">
+      <h2 id="cta-title">One command. Your account. Your content.</h2>
+      <p>Mallok creates a Worker, a D1 database and an R2 bucket in your own Cloudflare account and deploys the site there. Nothing is hosted by Mallok, and there is no Mallok account to open.</p>
+    </div>
+    <div class="cta-side">
+      <div class="cmd" role="group" aria-label="Create command"><code>npx mallok create my-site</code></div>
+      <p class="fine">Needs Node.js 22+ and <code>wrangler login</code>. Add <code>--no-deploy</code> to generate and check a project locally without creating cloud resources. Currently a 0.1 release candidate.</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/docs/#quick-start">Read the quick start<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="https://demo.mallok.dev/">Open the live demo<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+        <p>The Cloudflare-native CMS and website builder for multilingual B2B websites. Open source under Apache-2.0.</p>
+      </div>
+      <nav aria-label="Product">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/themes/">Themes</a></li>
+          <li><a href="/cost/">Cost ladder</a></li>
+          <li><a href="/features/#roadmap">Roadmap</a></li>
+          <li><a href="https://demo.mallok.dev/">Live demo</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Documentation">
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="/docs/">Docs home</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/GETTING_STARTED.md">Getting started</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">Theme format</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md">Plugin API</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI reference</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/fobstack/mallok">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/package/mallok">npm</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_STATUS.md">Release status</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.md">Contributing</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md">Security reporting</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/LICENSE">Apache-2.0 licence</a></li>
+          <li><a href="/brand/">Brand</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>Mallok is an independent open-source project and is not affiliated with Cloudflare, Resend, WordPress or Ghost.</span>
+      <span><a href="/zh-cn/features/" lang="zh-CN" hreflang="zh-CN">简体中文</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Mallok Mark">
+  <defs>
+    <clipPath id="mkBaseCut"><rect x="0" y="0" width="256" height="208"/></clipPath>
+    <mask id="mkWeaveMask">
+      <rect x="0" y="0" width="256" height="256" fill="white"/>
+      <g fill="none" stroke="black" stroke-width="46" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 24,216 L 54,82 C 59,60 66,52 74,52"/>
+        <path d="M 122,192 C 131,192 138,184 142,166 L 160,82 C 165,60 172,52 180,52"/>
+      </g>
+    </mask>
+  </defs>
+  <g transform="translate(5, 7)">
+    <g clip-path="url(#mkBaseCut)" fill="none" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+      <g mask="url(#mkWeaveMask)">
+        <path d="M 70,52 C 79,52 86,60 91,82 L 109,166 C 113,184 120,192 128,192" stroke="#0D0B14"/>
+        <path d="M 176,52 C 185,52 192,60 197,82 L 209,136" stroke="#0D0B14"/>
+      </g>
+      <path d="M 24,216 L 54,82 C 59,60 66,52 74,52" stroke="#0D0B14"/>
+      <path d="M 122,192 C 131,192 138,184 142,166 L 160,82 C 165,60 172,52 180,52" stroke="#0D0B14"/>
+    </g>
+    <circle cx="218" cy="186" r="21" fill="#0D0B14"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+  // mallok.dev: static files only (Workers Static Assets, no Worker script),
+  // so serving the site uses no Worker invocations.
+  "name": "mallok-website",
+  "compatibility_date": "2026-11-20",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [{ "pattern": "mallok.dev", "custom_domain": true }]
+}

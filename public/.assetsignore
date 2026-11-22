@@ -1,0 +1,4 @@
+# Build sources that live next to their output; not served.
+design/_build.py
+design/_board.src.css
+.DS_Store

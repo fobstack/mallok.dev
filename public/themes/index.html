@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Themes — Mallok</title>
+<meta name="description" content="The five Liquid themes bundled with Mallok — Atelier, Journal, Gazette, Manual and Folio — and how switching themes works.">
+<link rel="canonical" href="https://mallok.dev/themes/">
+<link rel="alternate" hreflang="en" href="https://mallok.dev/themes/">
+<link rel="alternate" hreflang="zh-CN" href="https://mallok.dev/zh-cn/themes/">
+<link rel="alternate" hreflang="x-default" href="https://mallok.dev/themes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mallok">
+<meta property="og:title" content="Themes — Mallok">
+<meta property="og:description" content="The five Liquid themes bundled with Mallok — Atelier, Journal, Gazette, Manual and Folio — and how switching themes works.">
+<meta property="og:url" content="https://mallok.dev/themes/">
+<meta property="og:image" content="https://mallok.dev/assets/brand/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0B14">
+<script>try{var t=localStorage.getItem('mallok-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='light'?'#FBFAFC':'#0D0B14'}}catch(e){}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/brand/favicon/safari-pinned-tab.svg" color="#7E22CE">
+<link rel="manifest" href="/assets/brand/favicon/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul><li><a href="/features/">Features</a></li><li><a href="/themes/" aria-current="page">Themes</a></li><li><a href="/cost/">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Demo</a></li></ul>
+    </nav>
+    <div class="head-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.2" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.8c1.7 1.8 2.5 3.9 2.5 6.2S9.7 12.4 8 14.2M8 1.8C6.3 3.6 5.5 5.7 5.5 8s.8 4.4 2.5 6.2" stroke-width="1.4"/></svg><span>EN</span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <ul class="lang-list"><li><a href="/themes/" lang="en" hreflang="en" aria-current="true"><span>English</span><svg class="check" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/zh-cn/themes/" lang="zh-CN" hreflang="zh-CN"><span>简体中文</span></a></li></ul>
+      </details>
+      <button class="theme-toggle" type="button" data-label-light="Switch to light mode" data-label-dark="Switch to dark mode" aria-label="Switch to light mode"><svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <a class="icon-link" href="https://github.com/fobstack/mallok" aria-label="Mallok on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="ico-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Menu
+        </summary>
+        <nav aria-label="Menu">
+          <ul><li><a href="/features/">Features</a></li><li><a href="/themes/" aria-current="page">Themes</a></li><li><a href="/cost/">Cost</a></li><li><a href="/docs/">Docs</a></li><li><a href="https://demo.mallok.dev/">Live demo<span>demo.mallok.dev</span></a></li><li><a href="https://github.com/fobstack/mallok">GitHub<span>fobstack/mallok</span></a></li><li><a href="https://www.npmjs.com/package/mallok">npm<span>mallok</span></a></li></ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow"><b>Themes</b>Five bundled designs</p>
+    <h1 id="page-title">Themes decide how it looks. Your content stays put.</h1>
+    <p class="lede">Mallok ships five Liquid themes. Each one is a directory of templates and one stylesheet in your project, bundled into the Worker when you deploy. Pick one, adjust its options in the admin, or write your own.</p>
+    <ul class="toc" aria-label="Themes">
+      <li><a href="#atelier">Atelier</a></li><li><a href="#journal">Journal</a></li><li><a href="#gazette">Gazette</a></li><li><a href="#manual">Manual</a></li><li><a href="#folio">Folio</a></li><li><a href="#switching">Switching themes</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="gallery-title" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <p class="eyebrow"><b>01</b>The gallery</p>
+      <h2 id="gallery-title">One real screenshot, four honest illustrations.</h2>
+      <p>Atelier is shown as it runs on the demo site. The other four are drawn here from each theme's own palette and layout description, and are labelled as illustrations.</p>
+    </div>
+    <article class="theme-detail" id="atelier" aria-labelledby="atelier-title">
+  <div class="theme-art"><div class="frame"><div class="frame-bar" aria-hidden="true"><span class="frame-dots"><i></i><i></i><i></i></span><span class="frame-url">demo.mallok.dev</span></div><img class="frame-shot" src="/assets/atelier-desktop.jpg" width="1425" height="990" alt="Screenshot of the Atelier theme on the demo site: the homepage of a fictional titanium supplier, with a hero carousel, product navigation and a quotation button."></div></div>
+  <div>
+    <h3 id="atelier-title">Atelier<span class="tag tag-accent">default</span></h3>
+    <p class="lede">A material-first industrial catalogue. The theme a B2B site starts on: product families, specification cards, case studies, FAQs and a quotation call to action on every product.</p>
+    <dl class="spec"><div><dt>Made for</dt><dd>Manufacturers, suppliers and trading companies with a product catalogue</dd></div><div><dt>Content kinds</dt><dd>Page, Product, Product family, Case study, FAQ, Note</dd></div><div><dt>Options in the admin</dt><dd>Hero headline, paragraph and badge, stats, certifications and more</dd></div><div><dt>Client script</dt><dd>One declared, dependency-free carousel script on the homepage only (about 4 KB). Every other page is script-free.</dd></div><div><dt>Ships with</dt><dd>Light and dark; English and Chinese language packs</dd></div><div><dt>Palette</dt><dd><div class="swatches"><span><i style="--sw:#152b40"></i>#152b40</span><span><i style="--sw:#1748bd"></i>#1748bd</span><span><i style="--sw:#dce4eb"></i>#dce4eb</span><span><i style="--sw:#f0f4f8"></i>#f0f4f8</span></div></dd></div></dl>
+    <p style="margin-top:1.25rem"><a class="btn btn-ghost" href="https://demo.mallok.dev/">Open the Atelier demo<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p><p class="fine" style="margin-top:.6rem">The demo is read-only; its company and content are fictional, and it collects no inquiries.</p>
+  </div>
+</article>
+    <article class="theme-detail" id="journal" aria-labelledby="journal-title">
+  <div class="theme-art"><div class="frame"><div class="frame-bar" aria-hidden="true"><span class="frame-dots"><i></i><i></i><i></i></span><span class="frame-url">journal</span></div><svg viewBox="0 0 640 420" role="img" aria-label="Illustration of the Journal theme: a quiet single-column article list." xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="420" fill="#ffffff"/>
+<text x="150" y="52" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#1f2937">Field Notes</text>
+<text x="490" y="52" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280">Articles   About   RSS</text>
+<rect x="150" y="72" width="340" height="1" fill="#e5e7eb"/>
+<text x="150" y="118" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#6b7280">2026-08-14</text><text x="150" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#1f2937">Notes on a slower release cycle</text><rect x="150" y="152" width="330" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="165" width="300" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="178" width="210" height="6" rx="3" fill="#e5e7eb"/><text x="490" y="118" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#1d4ed8">4 min read</text><text x="150" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#6b7280">2026-07-30</text><text x="150" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#1f2937">What we learned from ten audits</text><rect x="150" y="248" width="320" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="261" width="335" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="274" width="180" height="6" rx="3" fill="#e5e7eb"/><text x="490" y="214" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#1d4ed8">4 min read</text><text x="150" y="310" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#6b7280">2026-07-02</text><text x="150" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#1f2937">Writing specifications people read</text><rect x="150" y="344" width="335" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="357" width="290" height="6" rx="3" fill="#e5e7eb"/><rect x="150" y="370" width="240" height="6" rx="3" fill="#e5e7eb"/><text x="490" y="310" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#1d4ed8">4 min read</text>
+<rect x="150" y="196" width="340" height="1" fill="#e5e7eb"/>
+<rect x="150" y="292" width="340" height="1" fill="#e5e7eb"/>
+<rect x="150" y="388" width="340" height="1" fill="#e5e7eb"/>
+</svg><span class="illus-label">Illustration, not a screenshot</span></div></div>
+  <div>
+    <h3 id="journal-title">Journal</h3>
+    <p class="lede">A quiet theme for articles and pages: one comfortable reading column, dates, optional reading time, and nothing else competing for attention.</p>
+    <dl class="spec"><div><dt>Made for</dt><dd>Blogs, notes, company news</dd></div><div><dt>Content kinds</dt><dd>Page, Article</dd></div><div><dt>Options in the admin</dt><dd>Accent colour, show reading time</dd></div><div><dt>Client script</dt><dd>None</dd></div><div><dt>Ships with</dt><dd>Light and dark; English and Chinese language packs</dd></div><div><dt>Palette</dt><dd><div class="swatches"><span><i style="--sw:#1f2937"></i>#1f2937</span><span><i style="--sw:#1d4ed8"></i>#1d4ed8</span><span><i style="--sw:#e5e7eb"></i>#e5e7eb</span><span><i style="--sw:#ffffff"></i>#ffffff</span></div></dd></div></dl>
+    
+  </div>
+</article>
+    <article class="theme-detail" id="gazette" aria-labelledby="gazette-title">
+  <div class="theme-art"><div class="frame"><div class="frame-bar" aria-hidden="true"><span class="frame-dots"><i></i><i></i><i></i></span><span class="frame-url">gazette</span></div><svg viewBox="0 0 640 420" role="img" aria-label="Illustration of the Gazette theme: serif masthead, lead story with art, a latest rail and a subscribe band." xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="gz-art" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c3e8e"/><stop offset="1" stop-color="#5a6fc9"/></linearGradient></defs>
+<rect width="640" height="420" fill="#ffffff"/>
+<text x="30" y="26" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#5e5e64">VOL. 12 · TRADE EDITION</text>
+<text x="610" y="26" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#a11d33">Subscribe</text>
+<text x="320" y="72" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="36" font-weight="700" fill="#16171a" letter-spacing="-1">The Gazette</text>
+<rect x="30" y="90" width="580" height="2" fill="#16171a"/>
+<rect x="30" y="95" width="580" height="1" fill="#16171a"/>
+<text x="320" y="116" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="600" fill="#5a5b61" letter-spacing="1.2">MARKETS    POLICY    LOGISTICS    TECHNOLOGY    OPINION</text>
+<rect x="30" y="128" width="580" height="1" fill="#ebebe8"/>
+<rect x="30" y="146" width="380" height="150" fill="url(#gz-art)"/>
+<path d="M30 296l110-70 80 40 90-80 100 62v48z" fill="#ffffff" opacity=".14"/>
+<circle cx="350" cy="184" r="20" fill="#ffffff" opacity=".2"/>
+<text x="30" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" font-weight="700" fill="#a11d33" letter-spacing="1.2">MARKETS</text>
+<text x="30" y="343" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="21" font-weight="700" fill="#16171a">Specialty metals open the week</text>
+<text x="30" y="367" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="21" font-weight="700" fill="#16171a">on firmer footing</text>
+<text x="440" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" font-weight="700" fill="#a11d33" letter-spacing="1.2">LATEST</text>
+<text x="440" y="166" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#5e5e64">01</text><text x="462" y="166" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" font-weight="700" fill="#16171a">Licence quotas tighten</text><rect x="462" y="175" width="120" height="5" rx="2.5" fill="#ebebe8"/><rect x="440" y="190" width="170" height="1" fill="#ebebe8"/><text x="440" y="210" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#5e5e64">02</text><text x="462" y="210" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" font-weight="700" fill="#16171a">Sponge prices steady</text><rect x="462" y="219" width="108" height="5" rx="2.5" fill="#ebebe8"/><rect x="440" y="234" width="170" height="1" fill="#ebebe8"/><text x="440" y="254" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#5e5e64">03</text><text x="462" y="254" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" font-weight="700" fill="#16171a">New mill capacity</text><rect x="462" y="263" width="96" height="5" rx="2.5" fill="#ebebe8"/><rect x="440" y="278" width="170" height="1" fill="#ebebe8"/><text x="440" y="298" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#5e5e64">04</text><text x="462" y="298" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" font-weight="700" fill="#16171a">Freight index eases</text><rect x="462" y="307" width="84" height="5" rx="2.5" fill="#ebebe8"/><rect x="440" y="322" width="170" height="1" fill="#ebebe8"/>
+<rect x="0" y="384" width="640" height="36" fill="#16171a"/>
+<text x="30" y="407" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="13" font-weight="700" fill="#ffffff">The morning wire, 06:30 daily.</text>
+<rect x="528" y="392" width="82" height="20" rx="2" fill="#a11d33"/>
+<text x="569" y="406" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#ffffff">Subscribe</text>
+</svg><span class="illus-label">Illustration, not a screenshot</span></div></div>
+  <div>
+    <h3 id="gazette-title">Gazette</h3>
+    <p class="lede">A trade-news magazine: serif masthead, a lead story with art, a rail of the latest stories and a subscribe band that points at the site feed by default.</p>
+    <dl class="spec"><div><dt>Made for</dt><dd>Industry news, market reports, editorial sites</dd></div><div><dt>Content kinds</dt><dd>Page, Story</dd></div><div><dt>Options in the admin</dt><dd>Masthead link, subscribe band title, text and link</dd></div><div><dt>Client script</dt><dd>None</dd></div><div><dt>Ships with</dt><dd>Light and dark; English and Chinese language packs</dd></div><div><dt>Palette</dt><dd><div class="swatches"><span><i style="--sw:#16171a"></i>#16171a</span><span><i style="--sw:#a11d33"></i>#a11d33</span><span><i style="--sw:#ebebe8"></i>#ebebe8</span><span><i style="--sw:#ffffff"></i>#ffffff</span></div></dd></div></dl>
+    
+  </div>
+</article>
+    <article class="theme-detail" id="manual" aria-labelledby="manual-title">
+  <div class="theme-art"><div class="frame"><div class="frame-bar" aria-hidden="true"><span class="frame-dots"><i></i><i></i><i></i></span><span class="frame-url">manual</span></div><svg viewBox="0 0 640 420" role="img" aria-label="Illustration of the Manual theme: centred hero, three quick-start cards and guide rows." xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="420" fill="#ffffff"/>
+<rect width="640" height="160" fill="#fdf7f2"/>
+<rect x="60" y="20" width="14" height="14" rx="3" fill="#c2410c"/>
+<text x="82" y="32" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#1a1c1e">Handbook</text>
+<text x="580" y="32" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.5" fill="#565a5e">Guides    Reference    Changelog</text>
+<rect x="268" y="62" width="104" height="20" rx="10" fill="#ffedd5"/>
+<text x="320" y="76" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#9a3412">Documentation</text>
+<text x="320" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="700" fill="#1a1c1e" letter-spacing="-0.8">Operator handbook</text>
+<rect x="210" y="128" width="220" height="6" rx="3" fill="#e2e2df"/>
+<rect x="250" y="141" width="140" height="6" rx="3" fill="#e2e2df"/>
+<rect x="60" y="176" width="160" height="92" rx="8" fill="#ffffff" stroke="#e2e2df"/><rect x="74" y="190" width="26" height="18" rx="4" fill="#ffedd5"/><text x="87" y="203" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#9a3412">01</text><text x="74" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#1a1c1e">Install</text><rect x="74" y="241" width="110" height="5" rx="3" fill="#ececea"/><rect x="74" y="251" width="82" height="5" rx="3" fill="#ececea"/><rect x="240" y="176" width="160" height="92" rx="8" fill="#ffffff" stroke="#e2e2df"/><rect x="254" y="190" width="26" height="18" rx="4" fill="#ffedd5"/><text x="267" y="203" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#9a3412">02</text><text x="254" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#1a1c1e">Configure</text><rect x="254" y="241" width="96" height="5" rx="3" fill="#ececea"/><rect x="254" y="251" width="68" height="5" rx="3" fill="#ececea"/><rect x="420" y="176" width="160" height="92" rx="8" fill="#ffffff" stroke="#e2e2df"/><rect x="434" y="190" width="26" height="18" rx="4" fill="#ffedd5"/><text x="447" y="203" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#9a3412">03</text><text x="434" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#1a1c1e">Maintain</text><rect x="434" y="241" width="120" height="5" rx="3" fill="#ececea"/><rect x="434" y="251" width="92" height="5" rx="3" fill="#ececea"/>
+<rect x="60" y="300" width="520" height="1" fill="#ececea"/><text x="60" y="323" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#c2410c">1.0</text><text x="96" y="323" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="600" fill="#1a1c1e">Commissioning checklist</text><path d="M570 314l5 5-5 5" fill="none" stroke="#666a6f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="60" y="336" width="520" height="1" fill="#ececea"/><text x="60" y="359" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#c2410c">2.0</text><text x="96" y="359" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="600" fill="#1a1c1e">Routine inspection</text><path d="M570 350l5 5-5 5" fill="none" stroke="#666a6f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="60" y="372" width="520" height="1" fill="#ececea"/><text x="60" y="395" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#c2410c">3.0</text><text x="96" y="395" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="600" fill="#1a1c1e">Troubleshooting faults</text><path d="M570 386l5 5-5 5" fill="none" stroke="#666a6f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="408" width="520" height="1" fill="#ececea"/>
+</svg><span class="illus-label">Illustration, not a screenshot</span></div></div>
+  <div>
+    <h3 id="manual-title">Manual</h3>
+    <p class="lede">Documentation done properly: a centred hero, quick-start cards, guide rows and numbered sections in every article.</p>
+    <dl class="spec"><div><dt>Made for</dt><dd>Product manuals, handbooks, help centres</dd></div><div><dt>Content kinds</dt><dd>Page, Guide</dd></div><div><dt>Options in the admin</dt><dd>Hero badge and headline, help box title, text and link</dd></div><div><dt>Client script</dt><dd>None</dd></div><div><dt>Ships with</dt><dd>Light and dark; English and Chinese language packs</dd></div><div><dt>Palette</dt><dd><div class="swatches"><span><i style="--sw:#1a1c1e"></i>#1a1c1e</span><span><i style="--sw:#c2410c"></i>#c2410c</span><span><i style="--sw:#ffedd5"></i>#ffedd5</span><span><i style="--sw:#fdf7f2"></i>#fdf7f2</span></div></dd></div></dl>
+    
+  </div>
+</article>
+    <article class="theme-detail" id="folio" aria-labelledby="folio-title">
+  <div class="theme-art"><div class="frame"><div class="frame-bar" aria-hidden="true"><span class="frame-dots"><i></i><i></i><i></i></span><span class="frame-url">folio</span></div><svg viewBox="0 0 640 420" role="img" aria-label="Illustration of the Folio theme: oversized serif intro, full-bleed featured project and an editorial grid." xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="fo-art" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a2b33"/><stop offset="1" stop-color="#5e1f26"/></linearGradient></defs>
+<rect width="640" height="420" fill="#faf8f4"/>
+<text x="34" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#1c1a17">Studio</text>
+<text x="606" y="34" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6f6a62">Work    Journal    <tspan fill="#7a2b33" font-weight="600">Enquire</tspan></text>
+<text x="606" y="74" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#6b665e">SELECTED WORK · 2024–2026</text>
+<text x="34" y="98" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="34" fill="#1c1a17" letter-spacing="-0.8">Objects, interiors and</text>
+<text x="34" y="136" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="34" font-style="italic" fill="#1c1a17" letter-spacing="-0.8">considered spaces.</text>
+<rect x="0" y="160" width="640" height="138" fill="url(#fo-art)"/>
+<rect x="392" y="182" width="150" height="116" fill="#faf8f4" opacity=".12"/>
+<circle cx="470" cy="214" r="34" fill="#faf8f4" opacity=".16"/>
+<text x="34" y="262" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#faf8f4" opacity=".85">01 — FEATURED</text>
+<text x="34" y="284" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="20" fill="#faf8f4">Harbour pavilion</text>
+<rect x="34" y="318" width="184" height="66" fill="#d9cfc0"/><text x="34" y="402" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" fill="#1c1a17">Reading room</text><text x="218" y="402" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#6b665e">02</text><rect x="228" y="318" width="184" height="66" fill="#c9b9a6"/><text x="228" y="402" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" fill="#1c1a17">Courtyard house</text><text x="412" y="402" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#6b665e">03</text><rect x="422" y="318" width="184" height="66" fill="#e3ddd2"/><text x="422" y="402" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', 'Songti SC', serif" font-size="12.5" fill="#1c1a17">Oak series</text><text x="606" y="402" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" fill="#6b665e">04</text>
+</svg><span class="illus-label">Illustration, not a screenshot</span></div></div>
+  <div>
+    <h3 id="folio-title">Folio</h3>
+    <p class="lede">A light gallery portfolio: an oversized serif introduction, a full-bleed featured project and an editorial grid for the rest.</p>
+    <dl class="spec"><div><dt>Made for</dt><dd>Studios, designers, project showcases</dd></div><div><dt>Content kinds</dt><dd>Page, Project, Writing</dd></div><div><dt>Options in the admin</dt><dd>Intro paragraph, meta line, enquire link</dd></div><div><dt>Client script</dt><dd>None</dd></div><div><dt>Ships with</dt><dd>Light and dark; English and Chinese language packs</dd></div><div><dt>Palette</dt><dd><div class="swatches"><span><i style="--sw:#1c1a17"></i>#1c1a17</span><span><i style="--sw:#7a2b33"></i>#7a2b33</span><span><i style="--sw:#e3ddd2"></i>#e3ddd2</span><span><i style="--sw:#faf8f4"></i>#faf8f4</span></div></dd></div></dl>
+    
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="section tinted" id="switching" aria-labelledby="switching-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>02</b>Switching themes</p>
+        <h2 id="switching-title">One line of source, one redeploy. Not one click.</h2>
+        <p class="lede">The theme is a build-time choice in your site's Worker entry. Changing it means editing that line, building and deploying — and Mallok's admin says so rather than offering a switch that pretends otherwise.</p>
+        <ul class="ticks">
+          <li>No content is migrated, no content id changes, and by default no public URL changes.</li>
+          <li>A content kind the new theme does not declare is rendered through its page layout; the content and its URLs stay.</li>
+          <li>The options a theme exposes — headlines, colours, links — are edited in the admin and are live immediately.</li>
+          <li>Templates ship inside the Worker and assets go to Static Assets; a theme is never stored in D1 or R2.</li>
+        </ul>
+      </div>
+      <div>
+        <figure class="code" style="margin:0">
+          <figcaption class="code-bar"><span>src/worker/index.ts</span><span>your generated site</span></figcaption>
+          <pre tabindex="0"><code><span class="k">import</span> { atelier, createMallok, inquiry } <span class="k">from</span> <span class="s">'mallok/worker'</span>;
+
+<span class="k">export default</span> createMallok({
+  <span class="c">// One of: atelier, folio, gazette, journal, manual.</span>
+  <span class="c">// Or your own, built with defineTheme.</span>
+  theme: atelier,
+  plugins: [inquiry],
+});</code></pre>
+        </figure>
+        <div class="track" aria-hidden="true" style="margin-top:1rem"><span>edit this line</span><i></i><span>build</span><i></i><span>deploy</span><i></i><span>new look, same URLs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="own-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>03</b>Writing a theme</p>
+      <h2 id="own-title">Declarative by design, checkable at build time.</h2>
+      <p>Third-party themes use the same documented contract as the bundled ones. There is no private interface only official themes can reach.</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card"><h3>theme.json</h3><p>Declares the theme's content kinds, their fields, the options it exposes to the admin, its language packs and any client script.</p></article>
+      <article class="card"><h3>Restricted Liquid</h3><p>Layouts and partials in a restricted Liquid subset, rendering a documented view object. No arbitrary JavaScript runs in a theme.</p></article>
+      <article class="card"><h3>Distributed as source</h3><p>Copy a theme directory into your project or start from a starter. It enters your build artifact, so review it as you would any code you ship.</p></article>
+    </div>
+    <p style="margin-top:1.5rem"><a class="link-arrow" href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">Read the theme format</a></p>
+  </div>
+</section>
+</main>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-main">
+      <h2 id="cta-title">One command. Your account. Your content.</h2>
+      <p>Mallok creates a Worker, a D1 database and an R2 bucket in your own Cloudflare account and deploys the site there. Nothing is hosted by Mallok, and there is no Mallok account to open.</p>
+    </div>
+    <div class="cta-side">
+      <div class="cmd" role="group" aria-label="Create command"><code>npx mallok create my-site</code></div>
+      <p class="fine">Needs Node.js 22+ and <code>wrangler login</code>. Add <code>--no-deploy</code> to generate and check a project locally without creating cloud resources. Currently a 0.1 release candidate.</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/docs/#quick-start">Read the quick start<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="https://demo.mallok.dev/">Open the live demo<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/" aria-label="Mallok home"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+        <p>The Cloudflare-native CMS and website builder for multilingual B2B websites. Open source under Apache-2.0.</p>
+      </div>
+      <nav aria-label="Product">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/themes/">Themes</a></li>
+          <li><a href="/cost/">Cost ladder</a></li>
+          <li><a href="/features/#roadmap">Roadmap</a></li>
+          <li><a href="https://demo.mallok.dev/">Live demo</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Documentation">
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="/docs/">Docs home</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/GETTING_STARTED.md">Getting started</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">Theme format</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md">Plugin API</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI reference</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/fobstack/mallok">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/package/mallok">npm</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/RELEASE_STATUS.md">Release status</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.md">Contributing</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md">Security reporting</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/LICENSE">Apache-2.0 licence</a></li>
+          <li><a href="/brand/">Brand</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>Mallok is an independent open-source project and is not affiliated with Cloudflare, Resend, WordPress or Ghost.</span>
+      <span><a href="/zh-cn/themes/" lang="zh-CN" hreflang="zh-CN">简体中文</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

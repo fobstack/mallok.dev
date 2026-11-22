@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Mallok Mark">
+  <defs>
+    <clipPath id="mkBaseCut"><rect x="0" y="0" width="256" height="208"/></clipPath>
+    <linearGradient id="mkFront1" x1="24" y1="208" x2="78" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="55%" stop-color="#8B3DFF"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="mkBack1" x1="72" y1="50" x2="126" y2="196" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B0764"/>
+      <stop offset="38%" stop-color="#6B21A8"/>
+      <stop offset="72%" stop-color="#581C87"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </linearGradient>
+    <linearGradient id="mkFront2" x1="120" y1="196" x2="180" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7E22CE"/>
+      <stop offset="55%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#B06BFF"/>
+    </linearGradient>
+    <linearGradient id="mkBack2" x1="174" y1="50" x2="212" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B0764"/>
+      <stop offset="48%" stop-color="#6B21A8"/>
+      <stop offset="100%" stop-color="#581C87"/>
+    </linearGradient>
+    <linearGradient id="mkTealGrad" x1="196" y1="164" x2="240" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="50%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(5, 7)">
+    <g clip-path="url(#mkBaseCut)" fill="none" stroke-width="42" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 70,52 C 79,52 86,60 91,82 L 109,166 C 113,184 120,192 128,192" stroke="url(#mkBack1)"/>
+      <path d="M 176,52 C 185,52 192,60 197,82 L 204,116" stroke="url(#mkBack2)"/>
+      <path d="M 24,216 L 54,82 C 59,60 66,52 74,52" stroke="url(#mkFront1)"/>
+      <path d="M 122,192 C 131,192 138,184 142,166 L 160,82 C 165,60 172,52 180,52" stroke="url(#mkFront2)"/>
+    </g>
+    
+    <circle cx="218" cy="182" r="25" fill="url(#mkTealGrad)"/>
+  </g>
+</svg>

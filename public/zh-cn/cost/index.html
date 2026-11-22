@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成本 —— Cloudflare 成本阶梯 —— Mallok</title>
+<meta name="description" content="Mallok 以 Cloudflare 免费额度起步为设计目标，付费台阶只有一级：Workers Paid，每账号每月 5 美元。这里是逐项的成本阶梯。">
+<link rel="canonical" href="https://mallok.dev/zh-cn/cost/">
+<link rel="alternate" hreflang="en" href="https://mallok.dev/cost/">
+<link rel="alternate" hreflang="zh-CN" href="https://mallok.dev/zh-cn/cost/">
+<link rel="alternate" hreflang="x-default" href="https://mallok.dev/cost/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mallok">
+<meta property="og:title" content="成本 —— Cloudflare 成本阶梯 —— Mallok">
+<meta property="og:description" content="Mallok 以 Cloudflare 免费额度起步为设计目标，付费台阶只有一级：Workers Paid，每账号每月 5 美元。这里是逐项的成本阶梯。">
+<meta property="og:url" content="https://mallok.dev/zh-cn/cost/">
+<meta property="og:image" content="https://mallok.dev/assets/brand/social/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0B14">
+<script>try{var t=localStorage.getItem('mallok-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='light'?'#FBFAFC':'#0D0B14'}}catch(e){}</script>
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/brand/favicon/safari-pinned-tab.svg" color="#7E22CE">
+<link rel="manifest" href="/assets/brand/favicon/site.webmanifest">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/zh-cn/" aria-label="Mallok 首页"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+    <nav class="nav-desktop" aria-label="主导航">
+      <ul><li><a href="/zh-cn/features/">功能</a></li><li><a href="/zh-cn/themes/">主题</a></li><li><a href="/zh-cn/cost/" aria-current="page">成本</a></li><li><a href="/zh-cn/docs/">文档</a></li><li><a href="https://demo.mallok.dev/">演示</a></li></ul>
+    </nav>
+    <div class="head-tools">
+      <details class="lang-menu">
+        <summary aria-label="语言：简体中文"><svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.2" stroke-width="1.4"/><path d="M1.8 8h12.4M8 1.8c1.7 1.8 2.5 3.9 2.5 6.2S9.7 12.4 8 14.2M8 1.8C6.3 3.6 5.5 5.7 5.5 8s.8 4.4 2.5 6.2" stroke-width="1.4"/></svg><span>中文</span><svg class="chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <ul class="lang-list"><li><a href="/cost/" lang="en" hreflang="en"><span>English</span></a></li><li><a href="/zh-cn/cost/" lang="zh-CN" hreflang="zh-CN" aria-current="true"><span>简体中文</span><svg class="check" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul>
+      </details>
+      <button class="theme-toggle" type="button" data-label-light="切换到浅色模式" data-label-dark="切换到深色模式" aria-label="切换到浅色模式"><svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <a class="icon-link" href="https://github.com/fobstack/mallok" aria-label="Mallok 的 GitHub 仓库"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="ico-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4.5h12M2 8h12M2 11.5h12" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke-width="1.6" stroke-linecap="round"/></svg>
+          菜单
+        </summary>
+        <nav aria-label="菜单">
+          <ul><li><a href="/zh-cn/features/">功能</a></li><li><a href="/zh-cn/themes/">主题</a></li><li><a href="/zh-cn/cost/" aria-current="page">成本</a></li><li><a href="/zh-cn/docs/">文档</a></li><li><a href="https://demo.mallok.dev/">在线演示<span>demo.mallok.dev</span></a></li><li><a href="https://github.com/fobstack/mallok">GitHub<span>fobstack/mallok</span></a></li><li><a href="https://www.npmjs.com/package/mallok">npm<span>mallok</span></a></li></ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow"><b>Cost</b>Cloudflare 成本阶梯</p>
+    <h1 id="page-title">从免费额度起步。只有一级付费台阶，而且别的都不用改。</h1>
+    <p class="lede">Mallok 本身免费、开源，也不托管任何东西：所有费用都由你自己的账号直接付给 Cloudflare（如果发邮件，还有 Resend）。Mallok 以 Cloudflare 免费额度起步为设计目标——这是设计目标，不是无限免费的承诺。</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>01</b>两级台阶</p>
+      <h2 id="steps-title">先免费；有量之后，每个账号每月 5 美元。</h2>
+      <p>Mallok 依赖的每一项 Cloudflare 产品都有免费额度。唯一的付费台阶是 Workers Paid：它只是提高同一个 Worker、同一个 D1 数据库、同一个 R2 存储桶的上限——不迁移数据，也不改架构。</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <span class="tag tag-live">第 0 级</span>
+        <span class="price">$0<small> 付给 Cloudflare</small></span>
+        <h3>免费额度</h3>
+        <p>每天 10 万次 Worker 请求（每次 10 ms CPU）、5 GB D1、10 GB R2、免费的缓存与清除、每账号 5 个定时触发器、Turnstile 和 DNS。域名仍然需要，而域名不是免费的。</p>
+      </div>
+      <div class="rung rung-paid">
+        <span class="tag tag-accent">第 1 级</span>
+        <span class="price">$5<small> / 月 / 账号</small></span>
+        <h3>Workers Paid</h3>
+        <p>每月 1000 万次请求、3000 万 CPU 毫秒，单次调用默认 30 秒 CPU，D1 上限大幅提高，定时触发器增至 250 个。按 Cloudflare 账号计费，账号下的所有站点共用。超出包含额度的用量由 Cloudflare 另行计费。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" aria-labelledby="table-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>02</b>逐项明细</p>
+      <h2 id="table-title">每项依赖免费给多少，之后怎么算。</h2>
+    </div>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="ladder-caption">
+<table class="data">
+<caption id="ladder-caption">数据来自 Cloudflare 与 Resend 官方文档，核对日期为 2026-08-28。之后可能有变化，使用前请以服务商当前的定价页面为准。</caption>
+<thead><tr><th scope="col">用途 · 产品</th><th scope="col">免费额度</th><th scope="col">超出之后</th></tr></thead>
+<tbody><tr><th scope="row">渲染、后台、API<small>Workers</small></th><td>每天 10 万次请求，每次 10 ms CPU；脚本未压缩上限 64 MiB</td><td>Workers Paid 每月 5 美元：1000 万次请求、3000 万 CPU 毫秒，默认单次 30 秒 CPU；脚本上限同为 64 MiB</td></tr><tr><th scope="row">内容、询盘<small>D1</small></th><td>总计 5 GB，每天读 500 万行、写 10 万行；超出后当天不可用</td><td>开通 Paid 后：每月读 250 亿行、写 5000 万行，超过 5 GB 部分每 GB 0.75 美元</td></tr><tr><th scope="row">图片、附件<small>R2</small></th><td>10 GB·月，每月 100 万次写、1000 万次读，出站流量免费</td><td>每 GB·月 0.015 美元</td></tr><tr><th scope="row">后台应用<small>Workers Static Assets</small></th><td>请求免费且不限量，2 万个文件，单个 25 MiB</td><td>开通 Paid 后最多 10 万个文件</td></tr><tr><th scope="row">页面缓存与清除<small>Cache API + Purge API</small></th><td>免费；单文件清除额度充足，按标签/主机/全站清除每分钟 5 次</td><td>Pro 与 Business 套餐更高</td></tr><tr><th scope="row">定时发布、邮件重试<small>Cron Triggers</small></th><td><strong>每个账号 5 个</strong></td><td>开通 Paid 后 250 个</td></tr><tr><th scope="row">表单防刷<small>Turnstile</small></th><td>免费，20 个组件，每个 10 个主机名</td><td>Enterprise</td></tr><tr><th scope="row">域名与 DNS<small>Registrar + DNS</small></th><td>域名按成本价，DNS 免费</td><td>—</td></tr><tr><th scope="row">访客统计<small>Cloudflare 站点分析</small></th><td>免费</td><td>—</td></tr><tr><th scope="row">发送邮件<small>Resend</small></th><td>每月 3000 封，每天 100 封，3 个域名</td><td>Pro 每月 20 美元，5 万封</td></tr></tbody>
+</table></div>
+    <p class="fine" style="margin-top:.9rem">来源：<a href="https://github.com/fobstack/mallok/blob/main/docs/PRODUCT_VISION.md">产品愿景（英文）</a>第 7 节与 <a href="https://github.com/fobstack/mallok/blob/main/docs/CLOUDFLARE_RESOURCES.md">Cloudflare 资源说明（英文）</a>。Mallok 与 Cloudflare、Resend 没有隶属关系，这些价格也不由 Mallok 决定。</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="limits-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>03</b>影响产品设计的几条限制</p>
+      <h2 id="limits-title">免费额度有边界，位置在这里。</h2>
+    </div>
+    <div class="grid cols-2">
+      <div class="callout">
+        <h3>每个账号 5 个定时触发器</h3>
+        <p>每个 Mallok 站点用一个定时触发器来处理定时发布和邮件重试。所以一个免费 Cloudflare 账号最多支撑 5 个站点的定时任务；站点更多就需要 Workers Paid。</p>
+      </div>
+      <div class="callout">
+        <h3>D1 的每日上限是硬限制</h3>
+        <p>超过 D1 免费的每日行数后，数据库当天剩余时间都不可用，所有依赖 D1 的事情——冷渲染、保存、询盘——也随之停摆。站点长大后要留意用量。</p>
+      </div>
+      <div class="callout">
+        <h3>免费套餐的 10 ms CPU</h3>
+        <p>rc.5 实测缓存命中为 0–1 ms CPU；冷渲染 p50 为 11 ms、p95 为 35 ms，30 个样本里有 16 个超过 10 ms 目标，该样本中没有请求失败。这是候选版的已知限制，而且 rc.5 的数据不能代表之后的候选版。
+          <a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/RELEASE_STATUS.md">发布状态</a></p>
+      </div>
+      <div class="callout info">
+        <h3>缓存需要自定义域名</h3>
+        <p>边缘缓存——也就是让绝大多数请求不占用 Worker CPU 额度的关键——需要自定义域名才能工作。<code>workers.dev</code> 地址只用于预览。请把域名算进预算；Cloudflare Registrar 按成本价出售域名。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" aria-labelledby="unused-title">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <p class="eyebrow"><b>04</b>有意不用的服务</p>
+        <h2 id="unused-title">为了让台阶少一些，Mallok 不用这些。</h2>
+        <p class="lede">免费额度太紧或没有免费额度的依赖，都会多出一级付费台阶。所以 Worker 只用 D1、R2、Static Assets、Cache API 和一个定时触发器，别的都不用。</p>
+      </div>
+      <div class="mini">
+        <div class="mini-row"><span>Workers KV</span><span>免费额度每天只有 1000 次写入</span></div>
+        <div class="mini-row"><span>Cloudflare Images</span><span>付费——改为在浏览器里处理图片</span></div>
+        <div class="mini-row"><span>Email Workers send</span><span>仅 Paid 可用，且只能发到已验证地址</span></div>
+        <div class="mini-row"><span>Queues</span><span>不需要——定时任务已覆盖邮件重试</span></div>
+        <div class="mini-row"><span>Durable Objects</span><span>不使用</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="notfree-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><b>05</b>哪些不免费</p>
+      <h2 id="notfree-title">把账算清楚。</h2>
+    </div>
+    <div class="grid cols-3">
+      <article class="card"><h3>域名</h3><p>缓存需要它，一个像样的企业官网也需要它。价格由注册商决定。</p></article>
+      <article class="card"><h3>大量邮件</h3><p>询盘邮件通过 Resend 发送。免费额度每月 3000 封、每天 100 封，超出需要 Resend 的付费套餐。</p></article>
+      <article class="card"><h3>你的时间</h3><p>安装需要一个会用 Node 和终端的人。主题、插件和升级的重新部署，也要这个人来做。</p></article>
+    </div>
+  </div>
+</section>
+</main>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-main">
+      <h2 id="cta-title">一条命令，部署到你自己的账号。</h2>
+      <p>Mallok 会在你自己的 Cloudflare 账号里创建 Worker、D1 数据库和 R2 存储桶，并把网站部署上去。Mallok 不托管任何东西，也不需要注册 Mallok 账号。</p>
+    </div>
+    <div class="cta-side">
+      <div class="cmd" role="group" aria-label="创建命令"><code>npx mallok create my-site</code></div>
+      <p class="fine">需要 Node.js 22 及以上，并先执行 <code>wrangler login</code>。加上 <code>--no-deploy</code> 只在本地生成并检查项目，不创建云资源。当前为 0.1 候选版。</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/zh-cn/docs/#quick-start">阅读快速上手<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="https://demo.mallok.dev/">打开在线演示<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/zh-cn/" aria-label="Mallok 首页"><img class="logo-light" src="/assets/brand/svg/logo/mallok-logo-color-light.svg" width="924" height="256" alt="Mallok"><img class="logo-dark" src="/assets/brand/svg/logo/mallok-logo-color-dark.svg" width="924" height="256" alt="Mallok"></a>
+        <p>面向多语言 B2B 网站的 Cloudflare 原生 CMS 与建站工具。基于 Apache-2.0 开源。</p>
+      </div>
+      <nav aria-label="产品">
+        <h2>产品</h2>
+        <ul>
+          <li><a href="/zh-cn/features/">功能</a></li>
+          <li><a href="/zh-cn/themes/">主题</a></li>
+          <li><a href="/zh-cn/cost/">成本阶梯</a></li>
+          <li><a href="/zh-cn/features/#roadmap">路线图</a></li>
+          <li><a href="https://demo.mallok.dev/">在线演示</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="文档">
+        <h2>文档</h2>
+        <ul>
+          <li><a href="/zh-cn/docs/">文档入口</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/GETTING_STARTED.md">入门指南</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/ARCHITECTURE.md">架构（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/THEME_FORMAT.md">主题格式（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/PLUGIN_API.md">插件 API（英文）</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/CLI.md">CLI 参考（英文）</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="项目">
+        <h2>项目</h2>
+        <ul>
+          <li><a href="https://github.com/fobstack/mallok">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/package/mallok">npm</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/docs/zh-CN/RELEASE_STATUS.md">发布状态</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/CONTRIBUTING.zh-CN.md">贡献指南</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/SECURITY.md">安全报告</a></li>
+          <li><a href="https://github.com/fobstack/mallok/blob/main/LICENSE">Apache-2.0 许可证</a></li>
+          <li><a href="/zh-cn/brand/">品牌</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>Mallok 是独立的开源项目，与 Cloudflare、Resend、WordPress、Ghost 均无隶属关系。</span>
+      <span><a href="/cost/" lang="en" hreflang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  // www.mallok.dev -> https://mallok.dev, 301, keeping path and query.
+  // A separate Worker so the main site stays assets-only.
+  "name": "mallok-www-redirect",
+  "main": "index.js",
+  "compatibility_date": "2026-11-20",
+  "workers_dev": false,
+  "routes": [{ "pattern": "www.mallok.dev", "custom_domain": true }]
+}
