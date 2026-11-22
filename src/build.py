@@ -16,6 +16,7 @@ import docs  # noqa: E402
 import features  # noqa: E402
 import home  # noqa: E402
 import layout  # noqa: E402
+import notfound  # noqa: E402
 import themes  # noqa: E402
 import tokens  # noqa: E402
 from layout import T  # noqa: E402
@@ -107,6 +108,13 @@ def main():
             os.makedirs(os.path.dirname(out), exist_ok=True)
             open(out, 'w', encoding='utf-8').write(html)
             print('wrote', os.path.relpath(out, ROOT), len(html))
+        html = layout.page(
+            '/', T('Page not found — Mallok', '页面不存在 —— Mallok'),
+            T('This page does not exist on mallok.dev.', 'mallok.dev 上没有这个页面。'),
+            notfound.build(), with_cta=False, not_found=True)
+        out = os.path.join(ROOT, layout.url('/').strip('/'), '404.html')
+        open(out, 'w', encoding='utf-8').write(html)
+        print('wrote', os.path.relpath(out, ROOT), len(html))
 
 
 if __name__ == '__main__':

@@ -86,6 +86,18 @@ def main():
                     bad.append((pg, 'broken fragment', href))
             elif not os.path.exists(os.path.join(ROOT, target)):
                 bad.append((pg, 'broken link', href))
+    for nf, want in (('404.html', 'en'), ('zh-cn/404.html', 'zh-CN')):
+        p = P()
+        p.feed(open(os.path.join(ROOT, nf), encoding='utf-8').read())
+        robots = [h.get('content') for h in p.head if h.get('name') == 'robots']
+        if p.html_lang != want or p.h1 != 1 or robots != ['noindex']:
+            bad.append((nf, 'lang/h1/noindex', p.html_lang, p.h1, robots))
+        if any(h.get('rel') == 'canonical' for h in p.head):
+            bad.append((nf, 'canonical on a 404'))
+        # Served at any URL, so every internal link must be absolute.
+        for href in p.links + [src for src, _, _ in p.imgs]:
+            if href and not href.startswith(('/', '#', 'http')):
+                bad.append((nf, 'relative link', href))
     css = open(os.path.join(ROOT, 'assets', 'site.css'), encoding='utf-8').read()
     for u in re.findall(r'url\("?(/[^")]+)"?\)', css):
         if not os.path.exists(os.path.join(ROOT, u.lstrip('/'))):

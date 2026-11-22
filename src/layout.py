@@ -281,10 +281,25 @@ def footer(path):
 </footer>'''
 
 
-def page(path, title, description, body, with_cta=True, compact_cta=False):
-    """Wraps a page body in the full document."""
+def page(path, title, description, body, with_cta=True, compact_cta=False,
+         not_found=False):
+    """Wraps a page body in the full document.
+
+    A not-found page is served at whatever URL was missing, so it gets
+    noindex and no canonical, hreflang or og:url.
+    """
     lang = T('en', 'zh-CN')
     canonical = ORIGIN + url(path)
+    if not_found:
+        seo = '<meta name="robots" content="noindex">'
+    else:
+        seo = (
+            f'<link rel="canonical" href="{canonical}">\n'
+            f'<link rel="alternate" hreflang="en" href="{ORIGIN}{path}">\n'
+            f'<link rel="alternate" hreflang="zh-CN" href="{ORIGIN}/zh-cn{path}">\n'
+            f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{path}">\n'
+            f'<meta property="og:url" content="{canonical}">'
+        )
     return f'''<!doctype html>
 <html lang="{lang}" data-theme="dark">
 <head>
@@ -292,15 +307,11 @@ def page(path, title, description, body, with_cta=True, compact_cta=False):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
-<link rel="canonical" href="{canonical}">
-<link rel="alternate" hreflang="en" href="{ORIGIN}{path}">
-<link rel="alternate" hreflang="zh-CN" href="{ORIGIN}/zh-cn{path}">
-<link rel="alternate" hreflang="x-default" href="{ORIGIN}{path}">
+{seo}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mallok">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
-<meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{ORIGIN}{BRAND}/social/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
