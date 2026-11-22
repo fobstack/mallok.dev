@@ -4214,3 +4214,15 @@ html:lang(zh-CN) .m-page-t,
 .logo-panel.is-split img {
   width: 6rem;
 }
+
+/* ---------- Home hero particles (canvas added by site.js) ---------- */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Fade out towards the bottom so the field has no hard edge. */
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+}

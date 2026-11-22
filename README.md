@@ -1,3 +1,8 @@
+<a href="https://mallok.dev/"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/assets/brand/gif/mallok-logo-dark.gif">
+  <img src="public/assets/brand/gif/mallok-logo-light.gif" width="400" alt="Mallok">
+</picture></a>
+
 # mallok.dev
 
 The official website of [Mallok](https://github.com/fobstack/mallok), the

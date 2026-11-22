@@ -77,4 +77,109 @@
       }
     });
   });
+  // Home hero: drifting thread particles. Purple and teal points that link
+  // with fine lines when close and lean away from the pointer. Off under
+  // reduced motion; paused when the hero is off screen or the tab is hidden.
+  var hero = document.querySelector('.hero-home');
+  if (hero && !reduce.matches && window.HTMLCanvasElement) {
+    var canvas = document.createElement('canvas');
+    canvas.className = 'hero-particles';
+    canvas.setAttribute('aria-hidden', 'true');
+    hero.insertBefore(canvas, hero.firstChild);
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0, dots = [], running = false, onScreen = true, frame = 0;
+    var pointer = {x: -1e4, y: -1e4};
+    var LINK = 120, PUSH = 110;
+
+    var size = function () {
+      var r = hero.getBoundingClientRect();
+      w = r.width;
+      h = r.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(70, Math.round((w * h) / 16000));
+      while (dots.length < n) {
+        dots.push({
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+          r: 1 + Math.random() * 1.6, teal: Math.random() < 0.22
+        });
+      }
+      dots.length = n;
+    };
+
+    var draw = function () {
+      if (!running) return;
+      var light = root.dataset.theme === 'light';
+      var purple = light ? '126,34,206' : '168,85,247';
+      var teal = light ? '13,148,136' : '45,212,191';
+      var lineA = light ? 0.22 : 0.28;
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < dots.length; i++) {
+        var d = dots[i];
+        var dx = d.x - pointer.x, dy = d.y - pointer.y;
+        var dist = Math.hypot(dx, dy);
+        if (dist < PUSH && dist > 0.1) {
+          var f = (1 - dist / PUSH) * 0.6;
+          d.x += (dx / dist) * f;
+          d.y += (dy / dist) * f;
+        }
+        d.x += d.vx;
+        d.y += d.vy;
+        if (d.x < -10) d.x = w + 10; else if (d.x > w + 10) d.x = -10;
+        if (d.y < -10) d.y = h + 10; else if (d.y > h + 10) d.y = -10;
+        for (var j = i + 1; j < dots.length; j++) {
+          var e = dots[j];
+          var l = Math.hypot(d.x - e.x, d.y - e.y);
+          if (l < LINK) {
+            ctx.strokeStyle = 'rgba(' + purple + ',' + (lineA * (1 - l / LINK)).toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(d.x, d.y);
+            ctx.lineTo(e.x, e.y);
+            ctx.stroke();
+          }
+        }
+        ctx.fillStyle = 'rgba(' + (d.teal ? teal : purple) + ',' + (light ? 0.55 : 0.75) + ')';
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, 6.2832);
+        ctx.fill();
+      }
+      frame = requestAnimationFrame(draw);
+    };
+
+    var update = function () {
+      var go = onScreen && !document.hidden && !reduce.matches;
+      if (go && !running) {
+        running = true;
+        frame = requestAnimationFrame(draw);
+      } else if (!go && running) {
+        running = false;
+        cancelAnimationFrame(frame);
+      }
+    };
+
+    size();
+    new ResizeObserver(size).observe(hero);
+    new IntersectionObserver(function (entries) {
+      onScreen = entries[0].isIntersecting;
+      update();
+    }).observe(hero);
+    document.addEventListener('visibilitychange', update);
+    reduce.addEventListener('change', function () {
+      update();
+      if (reduce.matches) ctx.clearRect(0, 0, w, h);
+    });
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      pointer.x = e.clientX - r.left;
+      pointer.y = e.clientY - r.top;
+    });
+    hero.addEventListener('pointerleave', function () {
+      pointer.x = pointer.y = -1e4;
+    });
+    update();
+  }
 })();
