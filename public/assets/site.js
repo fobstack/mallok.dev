@@ -90,7 +90,35 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var w = 0, h = 0, dots = [], running = false, onScreen = true, frame = 0;
     var pointer = {x: -1e4, y: -1e4};
-    var LINK = 120, PUSH = 110;
+    var LINK = 120, PUSH = 110, PAD = 14;
+    // Text boxes (hero-relative) where no line is drawn, so copy stays clean.
+    var quiet = [];
+    var measure = function () {
+      var o = hero.getBoundingClientRect();
+      quiet = [];
+      hero.querySelectorAll(
+        '.hero-copy h1, .hero-copy .lede, .hero-copy .badge, ' +
+        '.hero-copy .actions, .hero-copy .cmd, .hero-copy .cmd-hint'
+      ).forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        quiet.push([r.left - o.left - PAD, r.top - o.top - PAD,
+                    r.right - o.left + PAD, r.bottom - o.top + PAD]);
+      });
+    };
+    // Checks points along the segment so a line cannot clip a text corner.
+    var crosses = function (a, b) {
+      for (var t = 0.25; t < 1; t += 0.25) {
+        if (inQuiet(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t)) return true;
+      }
+      return false;
+    };
+    var inQuiet = function (x, y) {
+      for (var q = 0; q < quiet.length; q++) {
+        var b = quiet[q];
+        if (x > b[0] && x < b[2] && y > b[1] && y < b[3]) return true;
+      }
+      return false;
+    };
 
     var size = function () {
       var r = hero.getBoundingClientRect();
@@ -108,6 +136,7 @@
         });
       }
       dots.length = n;
+      measure();
     };
 
     var draw = function () {
@@ -130,10 +159,14 @@
         d.y += d.vy;
         if (d.x < -10) d.x = w + 10; else if (d.x > w + 10) d.x = -10;
         if (d.y < -10) d.y = h + 10; else if (d.y > h + 10) d.y = -10;
+      }
+      for (i = 0; i < dots.length; i++) dots[i].q = inQuiet(dots[i].x, dots[i].y);
+      for (i = 0; i < dots.length; i++) {
+        d = dots[i];
         for (var j = i + 1; j < dots.length; j++) {
           var e = dots[j];
           var l = Math.hypot(d.x - e.x, d.y - e.y);
-          if (l < LINK) {
+          if (l < LINK && !d.q && !e.q && !crosses(d, e)) {
             ctx.strokeStyle = 'rgba(' + purple + ',' + (lineA * (1 - l / LINK)).toFixed(3) + ')';
             ctx.lineWidth = 1;
             ctx.beginPath();
