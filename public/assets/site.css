@@ -4154,3 +4154,33 @@ html:lang(zh-CN) .m-page-t,
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: none; }
 }
+
+/* ---------- Hero logo: the kit's looping GIF ----------
+   A CSS background, so only the current theme's GIF is downloaded. The GIFs
+   have solid backgrounds matching the page (#0D0B14 / near #FBFAFC); the blend
+   modes hide any one-step difference. Reduced motion gets the static SVG. */
+.hero-logo {
+  width: clamp(240px, 44vw, 400px);
+  aspect-ratio: 800 / 240;
+  margin-bottom: 0.75rem;
+  background: url("/assets/brand/gif/mallok-logo-dark.gif") center / contain no-repeat;
+  mix-blend-mode: lighten;
+}
+
+[data-theme="light"] .hero-logo {
+  background-image: url("/assets/brand/gif/mallok-logo-light.gif");
+  /* The light GIF's background is #F9F8FB; lifting it 0.8% meets #FBFAFC. */
+  filter: brightness(1.008);
+  mix-blend-mode: darken;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo {
+    background-image: url("/assets/brand/svg/logo/mallok-logo-color-dark.svg");
+    background-size: 86% auto;
+  }
+
+  [data-theme="light"] .hero-logo {
+    background-image: url("/assets/brand/svg/logo/mallok-logo-color-light.svg");
+  }
+}

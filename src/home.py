@@ -353,6 +353,7 @@ def build():
     return f'''<section class="hero hero-home" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-copy">
+      <div class="hero-logo" aria-hidden="true"></div>
       <a class="badge" href="{release_href()}"><span class="dot dot-pulse" aria-hidden="true"></span>{T("0.1 release candidate — rc.10 on npm", "0.1 候选版 —— npm 上为 rc.10")}<span aria-hidden="true">→</span></a>
       <h1 id="hero-title">{T("The Cloudflare-native CMS for <em>multilingual B2B</em> websites.", "为<em>多语言 B2B 网站</em>而生的 Cloudflare 原生 CMS")}</h1>
       <p class="lede">{T(
